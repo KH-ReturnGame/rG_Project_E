@@ -12,7 +12,7 @@ public class Player_Movement : MonoBehaviour
     private Player _player;
     private SpriteRenderer spriteRenderer;
     private Collider2D _playerCollider; 
-
+    // 음....
     Vector2 inputVec;
     float speed = 3;
     public bool knuck = false;

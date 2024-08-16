@@ -5,8 +5,12 @@ using UnityEngine;
 public class skill : MonoBehaviour
 {
     public Vector2 vec = new Vector2(0, 2);
-    public GameObject player;
+    private GameObject player;
 
+    void Start()
+    {
+        player = transform.parent.gameObject;
+    }
     // Update is called once per frame
     void Update()
     {

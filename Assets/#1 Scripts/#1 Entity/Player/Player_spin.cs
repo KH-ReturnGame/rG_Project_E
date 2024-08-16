@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class spin : MonoBehaviour
+public class Player_spin : MonoBehaviour
 {
     public float rotationSpeed = 5f;
 
