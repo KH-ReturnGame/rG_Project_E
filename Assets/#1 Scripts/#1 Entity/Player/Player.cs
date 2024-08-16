@@ -8,14 +8,12 @@ using UnityEngine;
 public enum PlayerStates
 {
     //
-    IsGround = 0,
-    CanJump,
+    IsMove = 0,
     CanDash,
     IsDashing,
-    IsWall,
-    //
-    IsMove,
-    IsFallAttacking,
+    CanDefence,
+    IsDefencing,
+    IsAttacking,
 
 }
 
@@ -43,13 +41,12 @@ public class Player : Entity
         
         //_states 초기화
         _states = new State<Player>[state_count];
-        _states[(int)PlayerStates.IsGround] = new PlayerOwnedStates.IsGround();
-        _states[(int)PlayerStates.CanJump] = new PlayerOwnedStates.CanJump();
+        _states[(int)PlayerStates.IsMove] = new PlayerOwnedStates.IsMove();
         _states[(int)PlayerStates.CanDash] = new PlayerOwnedStates.CanDash();
         _states[(int)PlayerStates.IsDashing] = new PlayerOwnedStates.IsDashing();
-        _states[(int)PlayerStates.IsWall] = new PlayerOwnedStates.IsWall();
-        _states[(int)PlayerStates.IsMove] = new PlayerOwnedStates.IsMove();
-        _states[(int)PlayerStates.IsFallAttacking] = new PlayerOwnedStates.IsFallAttacking();
+        _states[(int)PlayerStates.CanDefence] = new PlayerOwnedStates.CanDefence();
+        _states[(int)PlayerStates.IsDefencing] = new PlayerOwnedStates.IsDefencing();
+        _states[(int)PlayerStates.IsAttacking] = new PlayerOwnedStates.IsAttacking();
 
         _stateManager = new StateManager<Player>();
         _stateManager.Setup(this,state_count,_states);
