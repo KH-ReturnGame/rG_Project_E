@@ -12,11 +12,9 @@ public class Player_Movement : MonoBehaviour
     private Player _player;
     private SpriteRenderer spriteRenderer;
     private Collider2D _playerCollider; 
-    // 음....
+    // 움직임
     Vector2 inputVec;
     float speed = 3;
-    public bool knuck = false;
-    public float x, y;   
 
     //제일 처음 호출
     void Start()
@@ -31,8 +29,7 @@ public class Player_Movement : MonoBehaviour
     //매 프레임 실행
     void Update()
     {
-        x = _playerRigidbody.position.x;
-        y = _playerRigidbody.position.y;
+        
     }
 
     //0.02초마다 실행  --------------------------------------------------------------------------------
@@ -48,7 +45,6 @@ public class Player_Movement : MonoBehaviour
         
         Vector2 nextvec = inputVec.normalized * speed * Time.fixedDeltaTime;
         _playerRigidbody.MovePosition(_playerRigidbody.position + nextvec);
-        Debug.Log(inputVec.x);
     }
 }
 

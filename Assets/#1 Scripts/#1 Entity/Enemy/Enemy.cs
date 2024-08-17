@@ -8,10 +8,7 @@ public enum EnemyStates
 {
     //
     IsGround = 0,
-    IsAir,
-    IsJump,
     IsWall,
-    //
     IsMove,
     IsStun,
     IsAttacked,
@@ -26,7 +23,7 @@ public enum EnemyStates
 public class Enemy : Entity
 {
     //에너미가 가질 수 있는 모든 상태 개수
-    public static int state_count = 12;
+    public static int state_count = 9;
     //에너미가 가질 수 있는 모든 상태들
     public State<Enemy>[] _states;
     public StateManager<Enemy> _stateManager;
@@ -37,15 +34,13 @@ public class Enemy : Entity
     /// <returns>
     /// Null
     /// </returns>
-    public override void Setup(float maxHp)
+    public override void Setup(int maxHp)
     {
         base.Setup(maxHp);
         
         //_states 초기화
         _states = new State<Enemy>[state_count];
         _states[(int)EnemyStates.IsGround] = new EnemyOwnedStates.IsGround();
-        _states[(int)EnemyStates.IsAir] = new EnemyOwnedStates.IsAir();
-        _states[(int)EnemyStates.IsJump] = new EnemyOwnedStates.IsJump();
         _states[(int)EnemyStates.IsWall] = new EnemyOwnedStates.IsWall();
         _states[(int)EnemyStates.IsMove] = new EnemyOwnedStates.IsMove();
         _states[(int)EnemyStates.IsStun] = new EnemyOwnedStates.IsStun();
@@ -88,5 +83,4 @@ public class Enemy : Entity
     {
         return _stateManager._currentState.Contains(_states[(int)ps]);
     }
-
 }

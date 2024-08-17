@@ -10,10 +10,10 @@ using UnityEngine;
 public abstract class Entity : MonoBehaviour
 {
     //최대 체력
-    public float _maxHp;
+    public int _maxHp;
 
     //현재 체력
-    private float _currentHp;
+    private int _currentHp;
 
     /// <summary>
     /// Entity 클래스 기초 설정을 위한 Setup메소드, 매개변수로 최대체력을 받음
@@ -21,22 +21,21 @@ public abstract class Entity : MonoBehaviour
     /// <returns>
     /// Null
     /// </returns>
-    public virtual void Setup(float maxHp)
+    public virtual void Setup(int maxHp)// 어짜피 데미지로 할거 아니라서 그냥 int로 다 바꿔버림ㅎ
     {
         //매개변수로 받은 값들을 지정해주기
         _maxHp = maxHp;
         _currentHp = maxHp;
-        //Debug.Log("maxHp : "+_maxHp);
     }
 
     //hp Get 함수
-    public float GetHp()
+    public int GetHp()
     {
         return _currentHp;
     }
 
     //hp  Set 함수
-    public void SetHp(float newHp)
+    public void SetHp(int newHp)
     {
         _currentHp = newHp;
     }
@@ -50,12 +49,11 @@ public abstract class Entity : MonoBehaviour
     /// <returns>
     /// Null
     /// </returns>
-    protected void RecoveryHp(float hp)
+    protected void RecoveryHp(int hp)
     {
         //만약 체력을 회복했을때 최대체력을 넘어간다면 -> 회복 못하게
         if (_currentHp + hp > _maxHp)
         {
-            Debug.Log("cant recovery");
             _currentHp = _maxHp;
         }
         else
@@ -70,12 +68,12 @@ public abstract class Entity : MonoBehaviour
     /// <returns>
     /// Null
     /// </returns>
-    public void TakeDamage(float damage)
+    public void TakeDamage(int damage)
     {
         //만약 피해를 입었을때 체력이 0이하라면 -> 죽음처리
         if (_currentHp - damage <= 0 && _currentHp != 0)
         {
-            Debug.Log(_currentHp+","+damage);
+            // Debug.Log(_currentHp+","+damage);
             _currentHp = 0;
         }
         _currentHp -= damage;

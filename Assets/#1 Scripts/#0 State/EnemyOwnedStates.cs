@@ -17,36 +17,6 @@ namespace EnemyOwnedStates
             Debug.Log("isground Exit");
         }
     }
-    public class IsAir : State<Enemy>
-    {
-        public override void Enter(Enemy entity)
-        {
-            Debug.Log("IsAir enter");
-        }
-        public override void Execute(Enemy entity)
-        {
-            Debug.Log("IsAir Execute");
-        }
-        public override void Exit(Enemy entity)
-        {
-            Debug.Log("IsAir Exit");
-        }
-    }
-    public class IsJump : State<Enemy>
-    {
-        public override void Enter(Enemy entity)
-        {
-            
-        }
-        public override void Execute(Enemy entity)
-        {
-            
-        }
-        public override void Exit(Enemy entity)
-        {
-            
-        }
-    }
     public class IsWall : State<Enemy>
     {
         public override void Enter(Enemy entity)
@@ -81,15 +51,15 @@ namespace EnemyOwnedStates
     {
         public override void Enter(Enemy entity)
         {
-            
+            Debug.Log("ìŠ¤í„´");
         }
         public override void Execute(Enemy entity)
         {
-            
+            Debug.Log("ìŠ¤í„´ì¤‘");
         }
         public override void Exit(Enemy entity)
         {
-            
+            Debug.Log("ìŠ¤í„´í’€ë¦¼");
         }
     }
     public class IsAttacked : State<Enemy>
@@ -142,12 +112,10 @@ namespace EnemyOwnedStates
         public override void Enter(Enemy entity)
         {
             Debug.Log("IsDie Enter");
-            //½ÃÃ¼ »óÈ£ÀÛ¿ë ³ÖÀ»°Å¸é ¿©±â´Ù ³Ö¾î¾ß µÉ µí
-
         }
         public override void Execute(Enemy entity)
         {
-            Debug.Log("IsDie Execute");
+            
         }
         public override void Exit(Enemy entity)
         {

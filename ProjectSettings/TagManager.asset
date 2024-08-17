@@ -7,6 +7,9 @@ TagManager:
   - player_test
   - ground
   - wall
+  - enemy
+  - kick
+  - trap
   layers:
   - Default
   - TransparentFX
@@ -18,8 +21,8 @@ TagManager:
   - enemy
   - player
   - Wall
-  - 
-  - 
+  - kick
+  - trap
   - 
   - 
   - 
