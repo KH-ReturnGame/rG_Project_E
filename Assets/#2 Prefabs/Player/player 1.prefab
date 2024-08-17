@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1998837954095157812}
   - component: {fileID: 1998837954095157813}
-  - component: {fileID: 1998837954095157808}
   - component: {fileID: 1998837954095157809}
+  - component: {fileID: 1998837954095157808}
   m_Layer: 9
   m_Name: skill
   m_TagString: ground
@@ -86,18 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1998837954095157808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1998837954095157814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48d97bc18ec96b642b2d2991eef9e6f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1998837954095157809
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -124,6 +112,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1998837954095157808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998837954095157814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48d97bc18ec96b642b2d2991eef9e6f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1998837954163405244
 GameObject:
   m_ObjectHideFlags: 0

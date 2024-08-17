@@ -6,7 +6,6 @@ public class Enemy_Dead : MonoBehaviour
 {
    
     Rigidbody2D rigid;
-
     private Enemy testEnemy;
     void Awake()
     {
