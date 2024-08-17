@@ -11,11 +11,11 @@ public class skill : MonoBehaviour
     public Vector2 forceDirection = Vector2.up; // 힘을 가할 방향
     void Start()
     {
-        // 박스콜라이더든 뭐든 받아오고 그거 활성화 비활성화 해서 활성화 되었을땨 적태그 있으면 적 리지드바디에 접근해서 뭐시기냐 Impulse로 힘 줘가지고 시발 날려버려
         _KickCollider = GetComponent<Collider2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _player = this.transform.parent.GetComponent<Player>();
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -34,13 +34,15 @@ public class skill : MonoBehaviour
             _spriteRenderer.enabled = false;
         }
     }
+
     IEnumerator Kick()
     {
         _player.AddState(PlayerStates.IsAttacking);
-        yield return new WaitForSeconds(.3f);
+        yield return new WaitForSeconds(.3f);//발차는 시간 0.3초
         _player.RemoveState(PlayerStates.IsAttacking);
         yield return null;
     }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.tag == "enemy")
@@ -49,6 +51,8 @@ public class skill : MonoBehaviour
             Vector2 direction = (other.transform.position - transform.position).normalized;
 
             rigid.AddForce(direction * forceAmount, ForceMode2D.Impulse);
+            // 법선 방향으로 enemy힘주기
         }
     }
+
 }
