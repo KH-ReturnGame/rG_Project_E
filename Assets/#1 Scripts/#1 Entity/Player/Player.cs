@@ -35,7 +35,7 @@ public class Player : Entity
     /// <returns>
     /// Null
     /// </returns>
-    public override void Setup(float maxHp)
+    public override void Setup(int maxHp)
     {
         base.Setup(maxHp);
         

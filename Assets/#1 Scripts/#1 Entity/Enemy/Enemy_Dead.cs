@@ -4,36 +4,60 @@ using UnityEngine;
 
 public class Enemy_Dead : MonoBehaviour
 {
-   
     Rigidbody2D rigid;
+    Collider2D _collider;
     private Enemy testEnemy;
-    void Awake()
+    void Start()
     {
-
         testEnemy = GetComponent<Enemy>();
         rigid = GetComponent<Rigidbody2D>();
-
-        testEnemy.Setup(testEnemy._maxHp);
-
+        _collider = GetComponent<Collider2D>();
     }
 
-
-
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if(testEnemy.GetHp() <= 0)
         {
             testEnemy.AddState(EnemyStates.IsDie);
         }
+        if(testEnemy.IsContainState(EnemyStates.IsStun) || testEnemy.IsContainState(EnemyStates.IsDie))
+        {
+            rigid.velocity = new Vector2 (0,0);
+        }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "kick")
         {
-            Debug.Log("으악");
+            Debug.Log("슝");
         }
     }
-   
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "wall")
+        {
+            Debug.Log("으악");            
+            testEnemy.AddState(EnemyStates.IsWall);
+            testEnemy.AddState(EnemyStates.IsStun);
+            testEnemy.TakeDamage(1);
+            StartCoroutine(Stun());
+        }
+        else if(other.gameObject.tag == "trap")
+        {
+            Debug.Log("함정카드");
+            testEnemy.TakeDamage(1000000);
+            testEnemy.AddState(EnemyStates.IsDie);
+            _collider.enabled = false;
+        }
+    }
+
+    IEnumerator Stun()
+    {
+        rigid.velocity = new Vector2 (0,0);
+        yield return new WaitForSeconds(1.5f);//1.5초 후 기절 풀림
+        testEnemy.RemoveState(EnemyStates.IsStun);
+    }
 }
