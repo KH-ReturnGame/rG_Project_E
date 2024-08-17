@@ -22,32 +22,18 @@ public class Enemy_Dead : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-       
-
         if(testEnemy.GetHp() <= 0)
         {
             testEnemy.AddState(EnemyStates.IsDie);
         }
-        else
-        {
-            testEnemy.RemoveState(EnemyStates.IsDie);
-            rigid.velocity = new Vector2(-3, rigid.velocity.y);
-            // ����ٰ� ���ʹ� �ٸ� �Լ� ���� ���Ѿ� ���� ������
-        }
     }
 
-
-    //�Լ� �۵��ϴ��� ���� ���� ��� ������. ���߿� ���� ��
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if(other.name == "Triangle")
+        if(collision.gameObject.tag == "kick")
         {
-            Debug.Log("Collison");
-            testEnemy.TakeDamage(10);
-            rigid.AddForce(new Vector2(10,5), ForceMode2D.Impulse);
-
+            Debug.Log("으악");
         }
     }
-
    
 }
