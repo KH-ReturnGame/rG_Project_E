@@ -21,7 +21,8 @@ public class skill : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            StartCoroutine(Kick());
+            if (!_player.IsContainState(PlayerStates.IsDie))
+                StartCoroutine(Kick());
         }
         if (_player.IsContainState(PlayerStates.IsAttacking))
         {

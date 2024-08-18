@@ -40,7 +40,8 @@ public class Player_Movement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftShift) && _player.IsContainState(PlayerStates.CanDash))
         {
-            StartCoroutine(Dash());
+            if (!_player.IsContainState(PlayerStates.IsDie))
+                StartCoroutine(Dash());
         }
     }
 
@@ -50,8 +51,8 @@ public class Player_Movement : MonoBehaviour
         if (_player.IsContainState(PlayerStates.IsDashing)) // 대시 중에는 기본 움직임 중지
             return;
 
-
-        movement();
+        if (!_player.IsContainState(PlayerStates.IsDie))
+            movement();
     }
 
     void movement()
