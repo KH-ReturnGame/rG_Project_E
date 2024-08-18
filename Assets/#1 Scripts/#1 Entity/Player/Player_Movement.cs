@@ -38,7 +38,7 @@ public class Player_Movement : MonoBehaviour
     // 매 프레임 실행
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && _player.IsContainState(PlayerStates.CanDash))
+        if (Input.GetMouseButtonDown(0) && _player.IsContainState(PlayerStates.CanDash))
         {
             if (!_player.IsContainState(PlayerStates.IsDie))
                 StartCoroutine(Dash());
