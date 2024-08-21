@@ -7,7 +7,7 @@ public class skill : MonoBehaviour
     SpriteRenderer _spriteRenderer;
     Collider2D _KickCollider;
     Player _player;
-    public float forceAmount = 100f; // 추가할 힘의 크기
+    public float KickForce = 100f; // 추가할 힘의 크기
     public Vector2 forceDirection = Vector2.up; // 힘을 가할 방향
     void Start()
     {
@@ -51,7 +51,7 @@ public class skill : MonoBehaviour
             Rigidbody2D rigid = other.gameObject.GetComponent<Rigidbody2D>();
             Vector2 direction = (other.transform.position - transform.position).normalized;
 
-            rigid.AddForce(direction * forceAmount, ForceMode2D.Impulse);
+            rigid.AddForce(direction * KickForce, ForceMode2D.Impulse);
             // 법선 방향으로 enemy힘주기
         }
     }

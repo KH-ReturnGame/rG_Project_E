@@ -31,17 +31,19 @@ public class Enemy_Dead : MonoBehaviour
     {
         if(collision.gameObject.tag == "kick")
         {
+            testEnemy.AddState(EnemyStates.IsKicked);
             Debug.Log("슝");
         }
     }
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.tag == "wall")
+        if(other.gameObject.tag == "wall" && testEnemy.IsContainState(EnemyStates.IsKicked))
         {
             Debug.Log("으악");            
             testEnemy.AddState(EnemyStates.IsWall);
             testEnemy.AddState(EnemyStates.IsStun);
+            testEnemy.RemoveState(EnemyStates.IsKicked);
             testEnemy.TakeDamage(1);
             StartCoroutine(Stun());
         }
