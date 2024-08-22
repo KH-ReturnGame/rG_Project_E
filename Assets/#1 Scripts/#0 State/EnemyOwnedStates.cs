@@ -62,7 +62,7 @@ namespace EnemyOwnedStates
             Debug.Log("스턴풀림");
         }
     }
-    public class IsAttacked : State<Enemy>
+    public class IsKicked : State<Enemy>
     {
         public override void Enter(Enemy entity)
         {
