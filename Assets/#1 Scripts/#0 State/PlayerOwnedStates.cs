@@ -92,5 +92,21 @@ namespace PlayerOwnedStates
             
         }
     }
+
+    public class IsDie : State<Player>
+    {
+        public override void Enter(Player entity)
+        {
+            Debug.Log("사망");
+        }
+        public override void Execute(Player entity)
+        {
+            
+        }
+        public override void Exit(Player entity)
+        {
+            
+        }
+    }
 }
 
