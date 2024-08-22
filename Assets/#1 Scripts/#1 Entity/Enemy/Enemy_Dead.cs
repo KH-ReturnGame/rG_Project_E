@@ -32,7 +32,12 @@ public class Enemy_Dead : MonoBehaviour
         if(collision.gameObject.tag == "kick")
         {
             testEnemy.AddState(EnemyStates.IsKicked);
-            Debug.Log("슝");
+            if(testEnemy.IsContainState(EnemyStates.IsWall))
+            {
+                testEnemy.AddState(EnemyStates.IsStun);
+                testEnemy.TakeDamage(1);
+                StartCoroutine(Stun());
+            }
         }
     }
 
