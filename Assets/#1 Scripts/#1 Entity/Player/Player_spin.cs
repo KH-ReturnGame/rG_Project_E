@@ -3,10 +3,16 @@ using UnityEngine;
 public class Player_spin : MonoBehaviour
 {
     public float rotationSpeed = 5f;
+    Player _player;
+    void Start()
+    {
+        _player = GetComponent<Player>();
+    }
 
     void Update()
     {
-        RotateTowardsMouse();
+        if (!_player.IsContainState(PlayerStates.IsDie))
+            RotateTowardsMouse();
     }
 
     void RotateTowardsMouse()

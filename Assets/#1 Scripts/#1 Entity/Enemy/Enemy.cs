@@ -11,7 +11,7 @@ public enum EnemyStates
     IsWall,
     IsMove,
     IsStun,
-    IsAttacked,
+    IsKicked,
     IsAttacking,
     IsDetect,
     IsDie,
@@ -44,7 +44,7 @@ public class Enemy : Entity
         _states[(int)EnemyStates.IsWall] = new EnemyOwnedStates.IsWall();
         _states[(int)EnemyStates.IsMove] = new EnemyOwnedStates.IsMove();
         _states[(int)EnemyStates.IsStun] = new EnemyOwnedStates.IsStun();
-        _states[(int)EnemyStates.IsAttacked] = new EnemyOwnedStates.IsAttacked();
+        _states[(int)EnemyStates.IsKicked] = new EnemyOwnedStates.IsKicked();
         _states[(int)EnemyStates.IsAttacking] = new EnemyOwnedStates.IsAttacking();
         _states[(int)EnemyStates.IsDetect] = new EnemyOwnedStates.IsDetect();
         _states[(int)EnemyStates.IsDie] = new EnemyOwnedStates.IsDie();
