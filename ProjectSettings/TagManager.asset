@@ -10,6 +10,7 @@ TagManager:
   - enemy
   - kick
   - trap
+  - door
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Wall
   - kick
   - trap
-  - 
+  - door
   - 
   - 
   - 

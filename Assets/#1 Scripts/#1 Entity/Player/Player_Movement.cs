@@ -34,6 +34,11 @@ public class Player_Movement : MonoBehaviour
             _player.RemoveState(PlayerStates.CanDash);
         }
     }
+    void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
 
     // 매 프레임 실행
     void Update()

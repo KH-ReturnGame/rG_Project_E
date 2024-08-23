@@ -11,6 +11,11 @@ public class CameraController : MonoBehaviour
 
     private CinemachineVirtualCamera _cv;
 
+    void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     private void Update()
     {
         _cv = camera.GetComponent<CinemachineVirtualCamera>();
