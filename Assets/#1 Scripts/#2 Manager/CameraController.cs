@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour
 
     void Awake()
     {
-        // DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(this.gameObject);
     }
 
     private void Update()

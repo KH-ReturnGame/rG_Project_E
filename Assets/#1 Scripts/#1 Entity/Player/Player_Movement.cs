@@ -36,8 +36,9 @@ public class Player_Movement : MonoBehaviour
     }
     void Awake()
     {
-        //DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(this.gameObject);
     }
+
 
     // 매 프레임 실행
     void Update()
