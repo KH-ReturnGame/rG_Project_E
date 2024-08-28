@@ -133,8 +133,10 @@ public class LevelGeneration : MonoBehaviour {
 				continue; //skip where there is no room
 			}
 			Vector2 drawPos = room.gridPos;
-			drawPos.x *= 16;//aspect ratio of map sprite
-			drawPos.y *= 8;
+			drawPos.x *= 64;//aspect ratio of map sprite
+			drawPos.y *= 32;
+			drawPos.x += 310;// 미니맵 위치 조정
+			drawPos.y += 950;
 			//create map obj and assign its variables
 			MapSpriteSelector minimap = Object.Instantiate(minimapObj, drawPos, Quaternion.identity).GetComponent<MapSpriteSelector>();
 			minimap.type = room.type;
