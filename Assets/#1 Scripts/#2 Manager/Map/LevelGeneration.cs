@@ -7,7 +7,7 @@ public class LevelGeneration : MonoBehaviour {
 	Room[,] rooms;
 	List<Vector2> takenPositions = new List<Vector2>();
 	int gridSizeX, gridSizeY, numberOfRooms = 20;
-	public GameObject roomWhiteObj;
+	public GameObject minimapObj;
 	public Transform mapRoot;
 	void Start () {
 		if (numberOfRooms >= (worldSize.x * 2) * (worldSize.y * 2)){ // make sure we dont try to make more rooms than can fit in our grid
@@ -136,13 +136,13 @@ public class LevelGeneration : MonoBehaviour {
 			drawPos.x *= 16;//aspect ratio of map sprite
 			drawPos.y *= 8;
 			//create map obj and assign its variables
-			MapSpriteSelector mapper = Object.Instantiate(roomWhiteObj, drawPos, Quaternion.identity).GetComponent<MapSpriteSelector>();
-			mapper.type = room.type;
-			mapper.up = room.doorTop;
-			mapper.down = room.doorBot;
-			mapper.right = room.doorRight;
-			mapper.left = room.doorLeft;
-			mapper.gameObject.transform.parent = mapRoot;
+			MapSpriteSelector minimap = Object.Instantiate(minimapObj, drawPos, Quaternion.identity).GetComponent<MapSpriteSelector>();
+			minimap.type = room.type;
+			minimap.up = room.doorTop;
+			minimap.down = room.doorBot;
+			minimap.right = room.doorRight;
+			minimap.left = room.doorLeft;
+			minimap.gameObject.transform.parent = mapRoot;
 		}
 	}
 	void SetRoomDoors(){

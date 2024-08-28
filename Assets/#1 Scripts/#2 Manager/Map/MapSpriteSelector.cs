@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MapSpriteSelector : MonoBehaviour {
 	
@@ -11,9 +12,9 @@ public class MapSpriteSelector : MonoBehaviour {
 	public int type; // 0: normal, 1: enter
 	public Color normalColor, enterColor;
 	Color mainColor;
-	SpriteRenderer rend;
+	Image _image;
 	void Start () {
-		rend = GetComponent<SpriteRenderer>();
+		_image = GetComponent<Image>();
 		mainColor = normalColor;
 		PickSprite();
 		PickColor();
@@ -23,26 +24,26 @@ public class MapSpriteSelector : MonoBehaviour {
 			if (down){
 				if (right){
 					if (left){
-						rend.sprite = spUDRL;
+						_image.sprite = spUDRL;
 					}else{
-						rend.sprite = spDRU;
+						_image.sprite = spDRU;
 					}
 				}else if (left){
-					rend.sprite = spULD;
+					_image.sprite = spULD;
 				}else{
-					rend.sprite = spUD;
+					_image.sprite = spUD;
 				}
 			}else{
 				if (right){
 					if (left){
-						rend.sprite = spRUL;
+						_image.sprite = spRUL;
 					}else{
-						rend.sprite = spUR;
+						_image.sprite = spUR;
 					}
 				}else if (left){
-					rend.sprite = spUL;
+					_image.sprite = spUL;
 				}else{
-					rend.sprite = spU;
+					_image.sprite = spU;
 				}
 			}
 			return;
@@ -50,25 +51,25 @@ public class MapSpriteSelector : MonoBehaviour {
 		if (down){
 			if (right){
 				if(left){
-					rend.sprite = spLDR;
+					_image.sprite = spLDR;
 				}else{
-					rend.sprite = spDR;
+					_image.sprite = spDR;
 				}
 			}else if (left){
-				rend.sprite = spDL;
+				_image.sprite = spDL;
 			}else{
-				rend.sprite = spD;
+				_image.sprite = spD;
 			}
 			return;
 		}
 		if (right){
 			if (left){
-				rend.sprite = spRL;
+				_image.sprite = spRL;
 			}else{
-				rend.sprite = spR;
+				_image.sprite = spR;
 			}
 		}else{
-			rend.sprite = spL;
+			_image.sprite = spL;
 		}
 	}
 
@@ -78,6 +79,6 @@ public class MapSpriteSelector : MonoBehaviour {
 		}else if (type == 1){
 			mainColor = enterColor;
 		}
-		rend.color = mainColor;
+		_image.color = mainColor;
 	}
 }
