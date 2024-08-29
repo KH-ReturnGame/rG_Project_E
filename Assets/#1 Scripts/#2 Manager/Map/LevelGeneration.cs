@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelGeneration : MonoBehaviour {
-	Vector2 worldSize = new Vector2(4,4);
+	Vector2 worldSize = new Vector2(3,3);//얼마나 퍼져잇는지
 	Room[,] rooms;
 	List<Vector2> takenPositions = new List<Vector2>();
-	int gridSizeX, gridSizeY, numberOfRooms = 20;
+	int gridSizeX, gridSizeY, numberOfRooms = 15;//대충 방 몇개인지
 	public GameObject minimapObj;
 	public Transform mapRoot;
 	void Start () {
@@ -17,7 +17,7 @@ public class LevelGeneration : MonoBehaviour {
 		gridSizeY = Mathf.RoundToInt(worldSize.y);
 		CreateRooms(); //lays out the actual map
 		SetRoomDoors(); //assigns the doors where rooms would connect
-		DrawMap(); //instantiates objects to make up a map
+		DrawMap(); //미니맵 그리기
 		GetComponent<SheetAssigner>().Assign(rooms); //passes room info to another script which handles generatating the level geometry
 	}
 	void CreateRooms(){
@@ -153,7 +153,7 @@ public class LevelGeneration : MonoBehaviour {
 				if (rooms[x,y] == null){
 					continue;
 				}
-				Vector2 gridPosition = new Vector2(x,y);
+				Vector2 gridPosition = new Vector2(x, y);
 				if (y - 1 < 0){ //check above
 					rooms[x,y].doorBot = false;
 				}else{

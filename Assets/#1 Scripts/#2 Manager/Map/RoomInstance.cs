@@ -26,22 +26,30 @@ public class RoomInstance : MonoBehaviour {
 		MakeDoors();
 		GenerateRoomTiles();
 	}
-	void MakeDoors(){
-		//top door, get position then spawn
-		Vector3 spawnPos = transform.position + Vector3.up*(roomSizeInTiles.y/4 * tileSize) - Vector3.up*(tileSize/4);
-		PlaceDoor(spawnPos, doorTop, doorU);
-		//bottom door
-		spawnPos = transform.position + Vector3.down*(roomSizeInTiles.y/4 * tileSize) - Vector3.down*(tileSize/4);
-		PlaceDoor(spawnPos, doorBot, doorD);
-		//right door
-		spawnPos = transform.position + Vector3.right*(roomSizeInTiles.x * tileSize) - Vector3.right*(tileSize);
-		PlaceDoor(spawnPos, doorRight, doorR);
-		//left door
-		spawnPos = transform.position + Vector3.left*(roomSizeInTiles.x * tileSize) - Vector3.left*(tileSize);
-		PlaceDoor(spawnPos, doorLeft, doorL);
+	void MakeDoors()
+	{
+	    float scaleFactor = 0.2f; // 방 크기를 줄였으므로 문 위치에도 동일한 비율을 적용
+
+	    //top door, get position then spawn
+	    Vector3 spawnPos = transform.position + Vector3.up * (roomSizeInTiles.y / 4 * tileSize * scaleFactor) - Vector3.up * (tileSize / 4 * scaleFactor);
+	    PlaceDoor(spawnPos, doorTop, doorU);
+	
+	    //bottom door
+	    spawnPos = transform.position + Vector3.down * (roomSizeInTiles.y / 4 * tileSize * scaleFactor) - Vector3.down * (tileSize / 4 * scaleFactor);
+	    PlaceDoor(spawnPos, doorBot, doorD);
+	
+	    //right door
+	    spawnPos = transform.position + Vector3.right * (roomSizeInTiles.x * tileSize * scaleFactor) - Vector3.right * (tileSize * scaleFactor);
+	    PlaceDoor(spawnPos, doorRight, doorR);
+	
+	    //left door
+	    spawnPos = transform.position + Vector3.left * (roomSizeInTiles.x * tileSize * scaleFactor) - Vector3.left * (tileSize * scaleFactor);
+	    PlaceDoor(spawnPos, doorLeft, doorL);
 	}
+
 	void PlaceDoor(Vector3 spawnPos, bool door, GameObject doorSpawn){
 		// check whether its a door or wall, then spawn
+		//Vector3 scaledSpawnPos = new Vector3(spawnPos.x/5, spawnPos.y/5, spawnPos.z);
 		if (door){
 			Instantiate(doorSpawn, spawnPos, Quaternion.identity).transform.parent = transform;
 		}else{
@@ -73,12 +81,16 @@ public class RoomInstance : MonoBehaviour {
 			}
 		}
 	}
-	Vector3 positionFromTileGrid(int x, int y){
-		Vector3 ret;
-		//find difference between the corner of the texture and the center of this object
-		Vector3 offset = new Vector3((-roomSizeInTiles.x + 1)*tileSize, (roomSizeInTiles.y/4)*tileSize - (tileSize/4), 0);
-		//find scaled up position at the offset
-		ret = new Vector3(tileSize * (float) x, -tileSize * (float) y, 0) + offset + transform.position;
-		return ret;
+	Vector3 positionFromTileGrid(int x, int y) 
+	{
+    	float scaleFactor = 0.2f; // 방 크기 축소에 따른 스케일링 팩터
+
+    	// 방의 중심에서 텍스처 코너까지의 오프셋을 계산 (스케일 적용)
+    	Vector3 offset = new Vector3((-roomSizeInTiles.x + 1) * tileSize * scaleFactor, (roomSizeInTiles.y / 4) * tileSize * scaleFactor - (tileSize / 4 * scaleFactor), 0);
+
+    	// 타일 그리드의 위치를 기준으로 실제 월드 위치 계산 (스케일 적용)
+    	Vector3 ret = new Vector3(tileSize * (float)x * scaleFactor, -tileSize * (float)y * scaleFactor, 0) + offset + transform.position;
+
+    	return ret;
 	}
 }
