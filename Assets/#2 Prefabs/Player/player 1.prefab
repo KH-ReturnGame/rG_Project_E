@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48d97bc18ec96b642b2d2991eef9e6f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceAmount: 100
+  KickForce: 100
   forceDirection: {x: 0, y: 1}
 --- !u!1 &1998837954163405244
 GameObject:
@@ -278,6 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2785f629cc3303e4ebd27004d190bf73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _camera: {fileID: 7912210984460505607, guid: 7a62e5d3ba672cc4c96b070916f8ca16, type: 3}
   speed: 3
   dashSpeed: 15
   dashDuration: 0.3
