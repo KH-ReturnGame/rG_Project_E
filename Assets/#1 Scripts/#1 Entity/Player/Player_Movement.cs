@@ -11,7 +11,8 @@ public class Player_Movement : MonoBehaviour
     private Player _player;
     private SpriteRenderer spriteRenderer;
     private Collider2D _playerCollider;
-    public GameObject _camera;
+    public Transform _camTransform;
+    public Transform _camborderTransform;
 
     // 움직임
     Vector2 inputVec;
@@ -31,6 +32,8 @@ public class Player_Movement : MonoBehaviour
         _player = GetComponent<Player>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         _playerCollider = GetComponent<Collider2D>();
+        GameObject camborder = GameObject.Find("Cam_Border");
+        _camborderTransform = camborder.GetComponent<Transform>();
         _player.AddState(PlayerStates.CanDash);
         if(_player.IsContainState(PlayerStates.IsDashing))
         {
@@ -132,8 +135,9 @@ public class Player_Movement : MonoBehaviour
 			}
 
 			// 플레이어 위치를 이동시킵니다.
-            transform.position += new Vector3(doorDirection.x * moveJump.x, doorDirection.y * moveJump.y, 0);
-            _camera.transform.position += new Vector3(doorDirection.x * moveJump.x, doorDirection.y * moveJump.y, 0);
+            transform.position += new Vector3(doorDirection.x * moveJump.x * 0.9f, doorDirection.y * moveJump.y * 0.9f, 0);
+            _camborderTransform.position += new Vector3(doorDirection.x * moveJump.x, doorDirection.y * moveJump.y, 0);
+            _camTransform.position = new Vector3(transform.position.x, transform.position.y, 0);
             // 카메라 이동 필요
 			// 필요한 경우 여기서 추가적인 맵 로딩 로직을 수행할 수 있습니다.
 		}
