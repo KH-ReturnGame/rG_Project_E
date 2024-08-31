@@ -31,12 +31,12 @@ public class move : MonoBehaviour
     {
         inputVec.x = Input.GetAxisRaw("Horizontal");
         inputVec.y = Input.GetAxisRaw("Vertical");
-        Vector2 HorizontalVec = new Vector2(rigid.position.x + inputVec.x, rigid.position.y);
+        Vector2 HorizontalVec = new Vector2(rigid.position.x + 0.51f * inputVec.x, rigid.position.y);
         Debug.DrawRay(HorizontalVec, Vector2.down, new Color(0, 1, 0));
-        RaycastHit2D HrayHit = Physics2D.Raycast(HorizontalVec, Vector2.down, 1, LayerMask.GetMask("platform"));
-        Vector2 VerticalVec = new Vector2(rigid.position.x, rigid.position.y + inputVec.y);
+        RaycastHit2D HrayHit = Physics2D.Raycast(HorizontalVec, Vector2.down, 0.1f, LayerMask.GetMask("platform"));
+        Vector2 VerticalVec = new Vector2(rigid.position.x, rigid.position.y + 0.51f * inputVec.y);
         Debug.DrawRay(VerticalVec, Vector2.left, new Color(0, 1, 0));
-        RaycastHit2D VrayHit = Physics2D.Raycast(VerticalVec, Vector2.left, 1, LayerMask.GetMask("platform"));
+        RaycastHit2D VrayHit = Physics2D.Raycast(VerticalVec, Vector2.left, 0.1f, LayerMask.GetMask("platform"));
         if (HrayHit.collider == null)
         {
             inputVec.x = 0;
