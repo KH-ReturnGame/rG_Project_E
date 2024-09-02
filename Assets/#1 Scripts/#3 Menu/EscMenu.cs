@@ -16,4 +16,19 @@ public class EscMenu : MonoBehaviour
     {
         
     }
+
+    public void DisableMenu()
+    {
+        
+    }
+
+    public void SettingGame()
+    {
+        
+    }
+
+    public void QuitGame()
+    {
+
+    }
 }
