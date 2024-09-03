@@ -22,6 +22,7 @@ public class EscMenu : MonoBehaviour
     public void DisableMenu()
     {
         this.gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void SettingGame()
