@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5596431912137583648}
   - component: {fileID: 6630316838439309486}
   - component: {fileID: 463085200107189896}
-  - component: {fileID: 896635697245210391}
   m_Layer: 5
   m_Name: Button (4)
   m_TagString: Untagged
@@ -122,9 +121,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 896635697245210391}
+      - m_Target: {fileID: 7955282378926886961}
         m_TargetAssemblyTypeName: NextButton, Assembly-CSharp
         m_MethodName: NextSetting
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 7955282378926886961}
+        m_TargetAssemblyTypeName: NextButton, Assembly-CSharp
+        m_MethodName: SetScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -134,23 +145,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
---- !u!114 &896635697245210391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 190516692879043956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecd1d4ae3d3c2bd41980916f832f59c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _AbleSettings:
-  - {fileID: 1920642052130976179}
-  - {fileID: 4093348078343807738}
-  _next: -1
-  _SettingIdx: 0
 --- !u!1 &285749855618696440
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,7 +671,6 @@ GameObject:
   - component: {fileID: 2920258429411713359}
   - component: {fileID: 3658904185682669692}
   - component: {fileID: 65942570566068640}
-  - component: {fileID: 6637220162403946581}
   m_Layer: 5
   m_Name: Button (6)
   m_TagString: Untagged
@@ -787,9 +780,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6637220162403946581}
+      - m_Target: {fileID: 7955282378926886961}
         m_TargetAssemblyTypeName: NextButton, Assembly-CSharp
         m_MethodName: NextSetting
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 7955282378926886961}
+        m_TargetAssemblyTypeName: NextButton, Assembly-CSharp
+        m_MethodName: SetScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -799,23 +804,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
---- !u!114 &6637220162403946581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1114297717590638846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecd1d4ae3d3c2bd41980916f832f59c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _AbleSettings:
-  - {fileID: 1920642052130976179}
-  - {fileID: 4093348078343807738}
-  _next: 1
-  _SettingIdx: 0
 --- !u!1 &1172862416742095819
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,7 +842,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50, y: -325}
+  m_AnchoredPosition: {x: -50, y: -350}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &8943993992437309613
@@ -1189,6 +1177,7 @@ GameObject:
   - component: {fileID: 5161988110829318018}
   - component: {fileID: 3969357288946140453}
   - component: {fileID: 2721457394897280337}
+  - component: {fileID: 7955282378926886961}
   m_Layer: 5
   m_Name: "\uC804\uCCB4 \uD654\uBA74"
   m_TagString: Untagged
@@ -1317,6 +1306,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7955282378926886961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479540158685970483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd1d4ae3d3c2bd41980916f832f59c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _AbleSettings:
+  - {fileID: 1920642052130976179}
+  - {fileID: 4093348078343807738}
+  _SettingIdx: 0
 --- !u!1 &1579847097293857131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1906,7 +1911,6 @@ GameObject:
   - component: {fileID: 576251575641283025}
   - component: {fileID: 1968150843320328900}
   - component: {fileID: 6193240325515399485}
-  - component: {fileID: 2026326917603309978}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -2016,9 +2020,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2026326917603309978}
+      - m_Target: {fileID: 3422104990962857573}
         m_TargetAssemblyTypeName: NextButton, Assembly-CSharp
         m_MethodName: NextSetting
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 3422104990962857573}
+        m_TargetAssemblyTypeName: NextButton, Assembly-CSharp
+        m_MethodName: SetScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2028,23 +2044,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
---- !u!114 &2026326917603309978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2767829353141276743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecd1d4ae3d3c2bd41980916f832f59c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _AbleSettings:
-  - {fileID: 3637648971829588436}
-  - {fileID: 285749855618696440}
-  _next: -1
-  _SettingIdx: 0
 --- !u!1 &2943960360286883786
 GameObject:
   m_ObjectHideFlags: 0
@@ -2192,7 +2191,6 @@ GameObject:
   - component: {fileID: 699444471930902861}
   - component: {fileID: 417554273663822696}
   - component: {fileID: 7088599130119580013}
-  - component: {fileID: 2060534195052668466}
   m_Layer: 5
   m_Name: Button (7)
   m_TagString: Untagged
@@ -2302,9 +2300,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2060534195052668466}
+      - m_Target: {fileID: 3422104990962857573}
         m_TargetAssemblyTypeName: NextButton, Assembly-CSharp
         m_MethodName: NextSetting
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 3422104990962857573}
+        m_TargetAssemblyTypeName: NextButton, Assembly-CSharp
+        m_MethodName: SetScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2314,23 +2324,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
---- !u!114 &2060534195052668466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3218081782549869677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecd1d4ae3d3c2bd41980916f832f59c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _AbleSettings:
-  - {fileID: 3637648971829588436}
-  - {fileID: 285749855618696440}
-  _next: 1
-  _SettingIdx: 0
 --- !u!1 &3306873872277690257
 GameObject:
   m_ObjectHideFlags: 0
@@ -2343,7 +2336,6 @@ GameObject:
   - component: {fileID: 5361843762665411581}
   - component: {fileID: 3081636315683057202}
   - component: {fileID: 7031017057486657591}
-  - component: {fileID: 6980792863074265741}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -2453,9 +2445,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6980792863074265741}
+      - m_Target: {fileID: 4903175785543495143}
         m_TargetAssemblyTypeName: NextButton, Assembly-CSharp
         m_MethodName: NextSetting
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 4903175785543495143}
+        m_TargetAssemblyTypeName: NextButton, Assembly-CSharp
+        m_MethodName: SetScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2465,26 +2469,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
---- !u!114 &6980792863074265741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3306873872277690257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecd1d4ae3d3c2bd41980916f832f59c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _AbleSettings:
-  - {fileID: 761534142428354381}
-  - {fileID: 6084007475570137824}
-  - {fileID: 5979965293085378892}
-  - {fileID: 5468638391942965460}
-  - {fileID: 6632539142540957162}
-  _next: 1
-  _SettingIdx: 0
 --- !u!1 &3578389848649401455
 GameObject:
   m_ObjectHideFlags: 0
@@ -2791,7 +2775,6 @@ GameObject:
   - component: {fileID: 4532704415108532420}
   - component: {fileID: 4222802469998842078}
   - component: {fileID: 1818284040310249976}
-  - component: {fileID: 6935337277337594280}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -2901,9 +2884,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6935337277337594280}
+      - m_Target: {fileID: 4903175785543495143}
         m_TargetAssemblyTypeName: NextButton, Assembly-CSharp
         m_MethodName: NextSetting
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 4903175785543495143}
+        m_TargetAssemblyTypeName: NextButton, Assembly-CSharp
+        m_MethodName: SetScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2913,26 +2908,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
---- !u!114 &6935337277337594280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3731751189077884315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecd1d4ae3d3c2bd41980916f832f59c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _AbleSettings:
-  - {fileID: 761534142428354381}
-  - {fileID: 6084007475570137824}
-  - {fileID: 5979965293085378892}
-  - {fileID: 5468638391942965460}
-  - {fileID: 6632539142540957162}
-  _next: -1
-  _SettingIdx: 0
 --- !u!1 &3783609215938078005
 GameObject:
   m_ObjectHideFlags: 0
@@ -3364,6 +3339,7 @@ GameObject:
   - component: {fileID: 571782275186221899}
   - component: {fileID: 3693997190079526101}
   - component: {fileID: 1724642953927707820}
+  - component: {fileID: 3422104990962857573}
   m_Layer: 5
   m_Name: VSync
   m_TagString: Untagged
@@ -3492,6 +3468,22 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3422104990962857573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4338329156875207830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd1d4ae3d3c2bd41980916f832f59c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _AbleSettings:
+  - {fileID: 3637648971829588436}
+  - {fileID: 285749855618696440}
+  _SettingIdx: 0
 --- !u!1 &4780309016026214607
 GameObject:
   m_ObjectHideFlags: 0
@@ -3945,6 +3937,7 @@ GameObject:
   - component: {fileID: 2527510400963306613}
   - component: {fileID: 3409170590024682889}
   - component: {fileID: 8225649285594715148}
+  - component: {fileID: 4903175785543495143}
   m_Layer: 5
   m_Name: "\uD574\uC0C1\uB3C4"
   m_TagString: Untagged
@@ -4076,6 +4069,25 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4903175785543495143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5396261423751887468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd1d4ae3d3c2bd41980916f832f59c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _AbleSettings:
+  - {fileID: 761534142428354381}
+  - {fileID: 6084007475570137824}
+  - {fileID: 5979965293085378892}
+  - {fileID: 5468638391942965460}
+  - {fileID: 6632539142540957162}
+  _SettingIdx: 0
 --- !u!1 &5468638391942965460
 GameObject:
   m_ObjectHideFlags: 0
@@ -4223,7 +4235,6 @@ GameObject:
   - component: {fileID: 6684372918936181935}
   - component: {fileID: 725238454003363094}
   - component: {fileID: 5593119976245601796}
-  - component: {fileID: 8914990456285010953}
   m_Layer: 5
   m_Name: Button (8)
   m_TagString: Untagged
@@ -4333,9 +4344,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8914990456285010953}
+      - m_Target: {fileID: 8823380752208543422}
         m_TargetAssemblyTypeName: NextButton, Assembly-CSharp
         m_MethodName: NextSetting
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 8823380752208543422}
+        m_TargetAssemblyTypeName: NextButton, Assembly-CSharp
+        m_MethodName: SetScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4345,27 +4368,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
---- !u!114 &8914990456285010953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5721181718291037210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecd1d4ae3d3c2bd41980916f832f59c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _AbleSettings:
-  - {fileID: 7152830889198854788}
-  - {fileID: 1579847097293857131}
-  - {fileID: 1428244102044139156}
-  - {fileID: 4256525753519957978}
-  - {fileID: 1668602226829213847}
-  - {fileID: 4780309016026214607}
-  _next: -1
-  _SettingIdx: 0
 --- !u!1 &5910658784599603526
 GameObject:
   m_ObjectHideFlags: 0
@@ -5104,6 +5106,7 @@ GameObject:
   - component: {fileID: 2030339408789892840}
   - component: {fileID: 4025918596895288468}
   - component: {fileID: 4898507815202937566}
+  - component: {fileID: 8823380752208543422}
   m_Layer: 5
   m_Name: "\uD654\uBA74 \uC9C4\uB3D9"
   m_TagString: Untagged
@@ -5236,6 +5239,26 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8823380752208543422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6607286314980122434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd1d4ae3d3c2bd41980916f832f59c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _AbleSettings:
+  - {fileID: 7152830889198854788}
+  - {fileID: 1579847097293857131}
+  - {fileID: 1428244102044139156}
+  - {fileID: 4256525753519957978}
+  - {fileID: 1668602226829213847}
+  - {fileID: 4780309016026214607}
+  _SettingIdx: 0
 --- !u!1 &6632539142540957162
 GameObject:
   m_ObjectHideFlags: 0
@@ -5831,7 +5854,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50, y: -450}
+  m_AnchoredPosition: {x: -50, y: -500}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &2886870932522905400
@@ -5897,7 +5920,6 @@ GameObject:
   - component: {fileID: 7357398784431557899}
   - component: {fileID: 8942314062471329002}
   - component: {fileID: 6369674978966792439}
-  - component: {fileID: 2871066153351760034}
   m_Layer: 5
   m_Name: Button (5)
   m_TagString: Untagged
@@ -6007,9 +6029,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2871066153351760034}
+      - m_Target: {fileID: 8823380752208543422}
         m_TargetAssemblyTypeName: NextButton, Assembly-CSharp
         m_MethodName: NextSetting
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 8823380752208543422}
+        m_TargetAssemblyTypeName: NextButton, Assembly-CSharp
+        m_MethodName: SetScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6019,27 +6053,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
---- !u!114 &2871066153351760034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8435829186786351583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecd1d4ae3d3c2bd41980916f832f59c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _AbleSettings:
-  - {fileID: 7152830889198854788}
-  - {fileID: 1579847097293857131}
-  - {fileID: 1428244102044139156}
-  - {fileID: 4256525753519957978}
-  - {fileID: 1668602226829213847}
-  - {fileID: 4780309016026214607}
-  _next: 1
-  _SettingIdx: 0
 --- !u!1 &8791660306750484326
 GameObject:
   m_ObjectHideFlags: 0
@@ -6161,4 +6174,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1659086201571865941}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
