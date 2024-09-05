@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NextButton : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class NextButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _SettingIdx = 0; // 나중에 GetInt 로 받아와야댐
+        _SettingIdx = 0;
         _ScreenWidth = 1920;
         _ScreenHeight = 1080;
         _FullScreenOn = true;
@@ -43,6 +44,7 @@ public class NextButton : MonoBehaviour
         Debug.Log(_SettingIdx);
         _AbleSettings[_SettingIdx].SetActive(true);
     }
+
     public void SetScreen()
     {
         switch (_SettingIdx)
@@ -73,22 +75,25 @@ public class NextButton : MonoBehaviour
                 break;
         }    
         Screen.SetResolution(_ScreenWidth, _ScreenHeight, _FullScreenOn);
+
+        GameObject _Canvas = GameObject.Find("Canvas");
+        CanvasScaler canvasScaler = _Canvas.GetComponent<CanvasScaler>();
+        canvasScaler.referenceResolution = new Vector2(_ScreenWidth, _ScreenHeight);
+        canvasScaler.matchWidthOrHeight = 0.5f;
+
+        PlayerPrefs.SetInt("ScreenWidth", _ScreenWidth);// 값 저장
+        PlayerPrefs.SetInt("ScreenHeight", _ScreenHeight);
     }
     public void SetVSync()
     {
         QualitySettings.vSyncCount = _SettingIdx;
+        PlayerPrefs.SetInt("IntVSync", _SettingIdx);// 이걸 왜 저장하는지 모르겠지만 일단 저장
     }
     public void SetFullScreen()
     {
-        if(_SettingIdx == 0)
-        {
-            _FullScreenOn = true;
-        }
-        else if(_SettingIdx == 1)
-        {
-            _FullScreenOn = false;
-        }
+        _FullScreenOn = (_SettingIdx == 0); //_SettingIdx이 0이면 true, 아니면 false, 코드 정상화 성공
         Screen.fullScreen = _FullScreenOn;
+        PlayerPrefs.SetInt("IntFullScreen", _SettingIdx); // 이걸 왜 저장하는지 모르겠지만 일단 저장22
     }
     public void SetVibrate()
     {
@@ -116,5 +121,6 @@ public class NextButton : MonoBehaviour
                 _VibrateRate = 1f;
                 break;
         }
+        PlayerPrefs.SetFloat("VibrateRate", _VibrateRate);
     }
 }

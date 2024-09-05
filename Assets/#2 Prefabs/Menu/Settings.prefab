@@ -135,7 +135,7 @@ MonoBehaviour:
         m_CallState: 1
       - m_Target: {fileID: 7955282378926886961}
         m_TargetAssemblyTypeName: NextButton, Assembly-CSharp
-        m_MethodName: SetScreen
+        m_MethodName: SetFullScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -794,7 +794,7 @@ MonoBehaviour:
         m_CallState: 1
       - m_Target: {fileID: 7955282378926886961}
         m_TargetAssemblyTypeName: NextButton, Assembly-CSharp
-        m_MethodName: SetScreen
+        m_MethodName: SetFullScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2034,7 +2034,7 @@ MonoBehaviour:
         m_CallState: 1
       - m_Target: {fileID: 3422104990962857573}
         m_TargetAssemblyTypeName: NextButton, Assembly-CSharp
-        m_MethodName: SetScreen
+        m_MethodName: SetVSync
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2314,7 +2314,7 @@ MonoBehaviour:
         m_CallState: 1
       - m_Target: {fileID: 3422104990962857573}
         m_TargetAssemblyTypeName: NextButton, Assembly-CSharp
-        m_MethodName: SetScreen
+        m_MethodName: SetVSync
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4358,7 +4358,7 @@ MonoBehaviour:
         m_CallState: 1
       - m_Target: {fileID: 8823380752208543422}
         m_TargetAssemblyTypeName: NextButton, Assembly-CSharp
-        m_MethodName: SetScreen
+        m_MethodName: SetVibrate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4455,7 +4455,6 @@ GameObject:
   - component: {fileID: 5925088597238263862}
   - component: {fileID: 5925088597238263860}
   - component: {fileID: 5925088597238263861}
-  - component: {fileID: 8543334263712117168}
   - component: {fileID: 654825227968282610}
   m_Layer: 5
   m_Name: Settings
@@ -4532,18 +4531,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8543334263712117168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5925088597238263863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03add0f55f80ed24d8d39ef65cec9f03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &654825227968282610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6043,7 +6030,7 @@ MonoBehaviour:
         m_CallState: 1
       - m_Target: {fileID: 8823380752208543422}
         m_TargetAssemblyTypeName: NextButton, Assembly-CSharp
-        m_MethodName: SetScreen
+        m_MethodName: SetVibrate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
