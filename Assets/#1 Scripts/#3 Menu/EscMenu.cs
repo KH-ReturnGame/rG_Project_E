@@ -27,7 +27,7 @@ public class EscMenu : MonoBehaviour
 
     public void SettingGame()
     {
-        Instantiate(_Settings, _Canvas.transform);
+        _Settings.SetActive(true);
     }
 
     public void QuitGame()

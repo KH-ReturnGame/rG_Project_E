@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public GameObject _EscMenu;
-    GameObject _Setting;
+    public GameObject _Setting;
     public bool IsMenu;
     // Start is called before the first frame update
     void Start()
@@ -28,11 +28,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 _EscMenu.SetActive(false);
-                _Setting = GameObject.Find("Settings(Clone)");
-                if(_Setting != null)
-                {
-                    DestroyImmediate(_Setting);
-                }
+                _Setting.SetActive(false);
                 Time.timeScale = 1;
             }
         }
