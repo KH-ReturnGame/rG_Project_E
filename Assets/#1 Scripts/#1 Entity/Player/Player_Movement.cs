@@ -136,8 +136,6 @@ public class Player_Movement : MonoBehaviour
             _camTransform.position = new Vector3(transform.position.x, transform.position.y, 0);
 			// 필요한 경우 여기서 추가적인 맵 로딩 로직을 수행할 수 있습니다.
 
-            Vector3 miniMapOffset = CalculateMiniMapOffset();//미니맵 오프셋 조정
-
             LevelGeneration levelGenerator = GameObject.Find("MapManager").GetComponent<LevelGeneration>();
             
             MapSpriteSelector currentRoomMinimap = levelGenerator.minimaps.Find(m => m.type == 1);
@@ -148,23 +146,20 @@ public class Player_Movement : MonoBehaviour
                 Debug.Log(currentRoomMinimap.transform.position.y);
             }
             
-            Vector3 newRoomPos = _camTransform.position + miniMapOffset;
+            Vector3 miniMapOffset = CalculateMiniMapOffset();//미니맵 오프셋 조정
+            Vector3 newRoomPos = miniMapOffset;
 
             Debug.Log($"New Room Position: {newRoomPos}");
 
             // 미니맵 상의 방 좌표 출력
             foreach (var minimap in levelGenerator.minimaps) {
-                Debug.Log($"Minimap Position: {minimap.transform.position}, Type: {minimap.type}");
+                Debug.Log($"Minimap Position: {minimap.transform.position}");
             }
 
-            MapSpriteSelector newRoomMinimap = levelGenerator.minimaps.Find(m => Vector3.Distance(m.transform.position, newRoomPos) < 5f);
+            MapSpriteSelector newRoomMinimap = levelGenerator.minimaps.Find(m => Vector3.Distance(m.transform.position, newRoomPos) < 20f);
             if (newRoomMinimap != null) {
                 newRoomMinimap.type = 1;
                 newRoomMinimap.PickColor(); // 색상 업데이트
-            }
-            else
-            {
-                Debug.Log("ㅗ^오^ㅗ");
             }
 		}
     }
@@ -173,6 +168,6 @@ public class Player_Movement : MonoBehaviour
         float scaleFactor = 6.25f; // X와 Y 둘 다 같은 비율 적용
     
         // 월드 좌표를 미니맵 좌표로 변환
-        return new Vector3(_camTransform.position.x / scaleFactor, _camTransform.position.y / scaleFactor, 0);
+        return new Vector3(310 + _camTransform.position.x / scaleFactor, 950 + _camTransform.position.y / scaleFactor, 0);
     }
 }
