@@ -63,8 +63,9 @@ public class Enemy_Dead : MonoBehaviour
 
     IEnumerator Stun()
     {
-        rigid.velocity = new Vector2 (0,0);
+        // rigid.velocity = new Vector2 (0,0);
         yield return new WaitForSeconds(1.5f);//1.5초 후 기절 풀림
         testEnemy.RemoveState(EnemyStates.IsStun);
+        testEnemy.RemoveState(EnemyStates.IsWall);
     }
 }

@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
-    public GameObject player;
+    GameObject player;
     float angle;
     public float speed;
-    public Rigidbody2D target;
+    Rigidbody2D target;
     Rigidbody2D rigid;
     public float distance;
-    public Enemy enemy;
+    Enemy enemy;
     //void Attack();
     void Awake()
     {
         player = GameObject.Find("player 1(Clone)");
         target = player.GetComponent<Rigidbody2D>();
         rigid = GetComponent<Rigidbody2D>();
+        enemy = GetComponent<Enemy>();
     }
     void Update()
     {
@@ -34,14 +35,16 @@ public class EnemyMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        
-        Vector2 dirVec = target.position - rigid.position;
-        if (enemy.IsContainState(EnemyState.IsStun))
+        if(!enemy.IsContainState(EnemyStates.IsKicked) && !enemy.IsContainState(EnemyStates.IsDie))
         {
-            nextvec = nextvec.zero;
+            Vector2 dirVec = target.position - rigid.position;
+            Vector2 nexcVec = dirVec.normalized * speed * Time.fixedDeltaTime;
+            if (enemy.IsContainState(EnemyStates.IsStun))
+            {
+                nexcVec = Vector2.zero;
+            }
+            rigid.MovePosition(rigid.position + nexcVec);
         }
-        Vector2 nexcVec = dirVec.normalized * speed * Time.fixedDeltaTime;
-        rigid.MovePosition(rigid.position + nexcVec);
     }
 
     /*void Attack()
