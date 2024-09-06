@@ -73,13 +73,12 @@ public class NextButton : MonoBehaviour
                 _ScreenWidth = 1920;
                 _ScreenHeight = 1080;
                 break;
-        }    
-        Screen.SetResolution(_ScreenWidth, _ScreenHeight, _FullScreenOn);
-
+        }
         GameObject _Canvas = GameObject.Find("Canvas");
         CanvasScaler canvasScaler = _Canvas.GetComponent<CanvasScaler>();
-        canvasScaler.referenceResolution = new Vector2(_ScreenWidth, _ScreenHeight);
         canvasScaler.matchWidthOrHeight = 0.5f;
+        
+        Screen.SetResolution(_ScreenWidth, _ScreenHeight, _FullScreenOn);
 
         PlayerPrefs.SetInt("ScreenWidth", _ScreenWidth);// 값 저장
         PlayerPrefs.SetInt("ScreenHeight", _ScreenHeight);
