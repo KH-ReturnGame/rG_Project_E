@@ -140,6 +140,11 @@ public class Player_Movement : MonoBehaviour
             _camTransform.position = new Vector3(transform.position.x, transform.position.y, 0);
             // 카메라 이동 필요
 			// 필요한 경우 여기서 추가적인 맵 로딩 로직을 수행할 수 있습니다.
+            LevelGeneration levelGeneratior = GameObject.Find("MapManager").GetComponent<LevelGeneration>();
+            foreach(MapSpriteSelector _minimap in levelGeneratior.minimaps)
+            {
+                _minimap.PickColor();
+            }
 		}
     }
 }

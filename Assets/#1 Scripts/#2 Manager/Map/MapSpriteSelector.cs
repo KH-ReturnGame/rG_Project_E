@@ -73,7 +73,7 @@ public class MapSpriteSelector : MonoBehaviour {
 		}
 	}
 
-	void PickColor(){ //changes color based on what type the room is
+	public void PickColor(){ //changes color based on what type the room is
 		if (type == 0){
 			mainColor = normalColor;
 		}else if (type == 1){

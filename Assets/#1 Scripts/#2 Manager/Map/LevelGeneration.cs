@@ -9,6 +9,7 @@ public class LevelGeneration : MonoBehaviour {
 	int gridSizeX, gridSizeY, numberOfRooms = 15;//대충 방 몇개인지
 	public GameObject minimapObj;
 	public Transform mapRoot;
+	public List<MapSpriteSelector> minimaps;
 	void Start () {
 		if (numberOfRooms >= (worldSize.x * 2) * (worldSize.y * 2)){ // make sure we dont try to make more rooms than can fit in our grid
 			numberOfRooms = Mathf.RoundToInt((worldSize.x * 2) * (worldSize.y * 2));
@@ -127,7 +128,8 @@ public class LevelGeneration : MonoBehaviour {
 		}
 		return ret;
 	}
-	void DrawMap(){
+	void DrawMap() // 미니맵
+	{
 		foreach (Room room in rooms){
 			if (room == null){
 				continue; //skip where there is no room
@@ -145,6 +147,7 @@ public class LevelGeneration : MonoBehaviour {
 			minimap.right = room.doorRight;
 			minimap.left = room.doorLeft;
 			minimap.gameObject.transform.parent = mapRoot;
+			minimaps.Add(minimap);
 		}
 	}
 	void SetRoomDoors(){
