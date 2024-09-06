@@ -9,9 +9,9 @@ public class EnemyMove : MonoBehaviour
     public float speed;
     public Rigidbody2D target;
     Rigidbody2D rigid;
-
-
-
+    public float distance;
+    public Enemy enemy;
+    //void Attack();
     void Awake()
     {
         player = GameObject.Find("player 1(Clone)");
@@ -24,13 +24,28 @@ public class EnemyMove : MonoBehaviour
                             player.transform.position.x - transform.position.x)
               * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+
+        distance = Vector2.Distance(player.transform.position, this.transform.position);
+        /*if (distance < 2)
+        {
+            Attack();
+        }*/
     }
 
     void FixedUpdate()
     {
+        
         Vector2 dirVec = target.position - rigid.position;
+        if (enemy.IsContainState(EnemyState.IsStun))
+        {
+            nextvec = nextvec.zero;
+        }
         Vector2 nexcVec = dirVec.normalized * speed * Time.fixedDeltaTime;
         rigid.MovePosition(rigid.position + nexcVec);
-        rigid.velocity = Vector2.zero;
     }
+
+    /*void Attack()
+    {
+        
+    }*/
 }
