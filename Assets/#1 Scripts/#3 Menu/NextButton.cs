@@ -121,5 +121,6 @@ public class NextButton : MonoBehaviour
                 break;
         }
         PlayerPrefs.SetFloat("VibrateRate", _VibrateRate);
+        Debug.Log(_VibrateRate);
     }
 }
