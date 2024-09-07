@@ -34,11 +34,13 @@ public class Player_Movement : MonoBehaviour
         _playerCollider = GetComponent<Collider2D>();
         GameObject camborder = GameObject.Find("Cam_Border");
         _camborderTransform = camborder.GetComponent<Transform>();
+
         _player.AddState(PlayerStates.CanDash);
         if(_player.IsContainState(PlayerStates.IsDashing))
         {
             _player.RemoveState(PlayerStates.CanDash);
         }
+        
         SheetAssigner SA = FindObjectOfType<SheetAssigner>();
 		Vector2 tempJump = SA.roomDimensions + SA.gutterSize;
 		moveJump = new Vector3(tempJump.x, tempJump.y, 0);
@@ -80,7 +82,7 @@ public class Player_Movement : MonoBehaviour
 
     IEnumerator Dash()
     {
-        // 대시 상태 제거
+        // 캔 대시 상태 제거
         _player.RemoveState(PlayerStates.CanDash);
 
         Vector2 dashDirection = Quaternion.Euler(0, 0, -90f) * transform.up; // 현재 바라보는 방향으로 대시
@@ -110,7 +112,7 @@ public class Player_Movement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "trap")
+        if(collision.gameObject.tag == "trap" && !_player.IsContainState(PlayerStates.IsDashing))
         {
             _player.AddState(PlayerStates.IsDie);
         }
