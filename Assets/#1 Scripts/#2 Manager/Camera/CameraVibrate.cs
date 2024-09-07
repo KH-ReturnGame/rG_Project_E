@@ -24,11 +24,12 @@ public class CameraVibrate : MonoBehaviour
                 StartCoroutine(Shake(AmpGain, FreGain, waitsec));
                 break;
             default:
-                Debug.Log("그런 카메라 쉐이크는 없다 게이야");
+                Debug.Log("그런 카메라 쉐이크는 없다");
                 break;
         }
     }
 
+    //이런거 만들어서 어떻게 진동할지 구현해놓고 위의 switch case문에 저장? 해놓으면 댐니다.
     IEnumerator Shake(float Amp, float Fre, float waitseconds)
     {
         float GainRate = PlayerPrefs.GetFloat("VibrateRate");

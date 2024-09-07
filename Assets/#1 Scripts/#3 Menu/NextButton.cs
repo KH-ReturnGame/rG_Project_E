@@ -87,6 +87,7 @@ public class NextButton : MonoBehaviour
     {
         QualitySettings.vSyncCount = _SettingIdx;
         PlayerPrefs.SetInt("IntVSync", _SettingIdx);// 이걸 왜 저장하는지 모르겠지만 일단 저장
+        // SetBool이 없어서 SetInt로 저장 왜 없는거야 ㅅㅂ
     }
     public void SetFullScreen()
     {
@@ -120,7 +121,6 @@ public class NextButton : MonoBehaviour
                 _VibrateRate = 1f;
                 break;
         }
-        PlayerPrefs.SetFloat("VibrateRate", _VibrateRate);
-        Debug.Log(_VibrateRate);
+        PlayerPrefs.SetFloat("VibrateRate", _VibrateRate);// 진동 비율? 세기? 암튼 그런거
     }
 }
