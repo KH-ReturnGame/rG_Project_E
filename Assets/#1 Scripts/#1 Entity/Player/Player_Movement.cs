@@ -40,7 +40,7 @@ public class Player_Movement : MonoBehaviour
         {
             _player.RemoveState(PlayerStates.CanDash);
         }
-        
+
         SheetAssigner SA = FindObjectOfType<SheetAssigner>();
 		Vector2 tempJump = SA.roomDimensions + SA.gutterSize;
 		moveJump = new Vector3(tempJump.x, tempJump.y, 0);
@@ -56,7 +56,8 @@ public class Player_Movement : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && _player.IsContainState(PlayerStates.CanDash))
         {
-            if (!_player.IsContainState(PlayerStates.IsDie))
+            if (!_player.IsContainState(PlayerStates.IsDie)
+            && !_player.IsContainState(PlayerStates.IsDefencing))
                 StartCoroutine(Dash());
         }
     }
@@ -67,7 +68,8 @@ public class Player_Movement : MonoBehaviour
         if (_player.IsContainState(PlayerStates.IsDashing)) // 대시 중에는 기본 움직임 중지
             return;
 
-        if (!_player.IsContainState(PlayerStates.IsDie))
+        if (!_player.IsContainState(PlayerStates.IsDie) 
+        && !_player.IsContainState(PlayerStates.IsDefencing))
             movement();
     }
 
@@ -112,7 +114,9 @@ public class Player_Movement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "trap" && !_player.IsContainState(PlayerStates.IsDashing))
+        if(collision.gameObject.tag == "trap" 
+        && !_player.IsContainState(PlayerStates.IsDashing) 
+        && !_player.IsContainState(PlayerStates.IsDefencing))
         {
             _player.AddState(PlayerStates.IsDie);
         }
