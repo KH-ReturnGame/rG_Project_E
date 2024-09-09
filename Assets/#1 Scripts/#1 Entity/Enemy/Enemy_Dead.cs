@@ -54,7 +54,7 @@ public class Enemy_Dead : MonoBehaviour
         }
         else if(other.gameObject.tag == "trap")
         {
-            Debug.Log("함정카드");
+            Debug.Log("함정www");
             testEnemy.TakeDamage(1000000);
             testEnemy.AddState(EnemyStates.IsDie);
             _collider.enabled = false;
