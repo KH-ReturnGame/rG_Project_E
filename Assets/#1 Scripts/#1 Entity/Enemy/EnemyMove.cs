@@ -27,10 +27,7 @@ public class EnemyMove : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, angle - 90);
 
         distance = Vector2.Distance(player.transform.position, this.transform.position);
-        /*if (distance < 2)
-        {
-            Attack();
-        }*/
+        
     }
 
     void FixedUpdate()
@@ -43,8 +40,20 @@ public class EnemyMove : MonoBehaviour
             {
                 nexcVec = Vector2.zero;
             }
-            rigid.MovePosition(rigid.position + nexcVec);
+            if (distance < 2f)
+            {
+                enemy.AddState(EnemyStates.IsAttacking);
+                StartCoroutine(attack());
+                nexcVec = Vector2.zero;
+            }
+                rigid.MovePosition(rigid.position + nexcVec);
         }
+    }
+
+    IEnumerator attack()
+    {
+        yield return new WaitForSeconds(1.5f);
+        enemy.RemoveState(EnemyStates.IsAttacking);
     }
 
     /*void Attack()
