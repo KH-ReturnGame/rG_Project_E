@@ -32,21 +32,9 @@ public class EnemyMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(!enemy.IsContainState(EnemyStates.IsKicked) && !enemy.IsContainState(EnemyStates.IsDie))
+        if(!enemy.IsContainState(EnemyStates.IsKicked) && !enemy.IsContainState(EnemyStates.IsDie) && !enemy.IsContainState(EnemyStates.IsAttacking))
         {
-            Vector2 dirVec = target.position - rigid.position;
-            Vector2 nexcVec = dirVec.normalized * speed * Time.fixedDeltaTime;
-            if (enemy.IsContainState(EnemyStates.IsStun))
-            {
-                nexcVec = Vector2.zero;
-            }
-            if (distance < 2f)
-            {
-                enemy.AddState(EnemyStates.IsAttacking);
-                StartCoroutine(attack());
-                nexcVec = Vector2.zero;
-            }
-                rigid.MovePosition(rigid.position + nexcVec);
+            movement();
         }
     }
 
@@ -56,6 +44,22 @@ public class EnemyMove : MonoBehaviour
         enemy.RemoveState(EnemyStates.IsAttacking);
     }
 
+    void movement()
+    {
+        Vector2 dirVec = target.position - rigid.position;
+        Vector2 nexcVec = dirVec.normalized * speed * Time.fixedDeltaTime;
+        if (enemy.IsContainState(EnemyStates.IsStun))
+        {
+            nexcVec = Vector2.zero;
+        }
+        if (distance < 2f)
+        {
+            enemy.AddState(EnemyStates.IsAttacking);
+            StartCoroutine(attack());
+            nexcVec = Vector2.zero;
+        }
+        rigid.MovePosition(rigid.position + nexcVec);
+    }
     /*void Attack()
     {
         
