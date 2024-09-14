@@ -80,6 +80,10 @@ public class Player_Movement : MonoBehaviour
 
         Vector2 nextVec = inputVec.normalized * speed * Time.fixedDeltaTime;
         _playerRigid.MovePosition(_playerRigid.position + nextVec);
+        if(_player.IsContainState(PlayerStates.IsInBlackHole))
+        {
+            
+        }
     }
 
     IEnumerator Dash()
