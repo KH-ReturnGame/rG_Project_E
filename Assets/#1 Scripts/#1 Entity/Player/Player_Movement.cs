@@ -80,10 +80,6 @@ public class Player_Movement : MonoBehaviour
 
         Vector2 nextVec = inputVec.normalized * speed * Time.fixedDeltaTime;
         _playerRigid.MovePosition(_playerRigid.position + nextVec);
-        if(_player.IsContainState(PlayerStates.IsInBlackHole))
-        {
-            
-        }
     }
 
     IEnumerator Dash()
@@ -159,12 +155,12 @@ public class Player_Movement : MonoBehaviour
             Vector3 miniMapOffset = CalculateMiniMapOffset();//미니맵 오프셋 조정
             Vector3 newRoomPos = miniMapOffset;
 
-            Debug.Log($"New Room Position: {newRoomPos}");
+            // Debug.Log($"New Room Position: {newRoomPos}");
 
-            // 미니맵 상의 방 좌표 출력
-            foreach (var minimap in levelGenerator.minimaps) {
-                Debug.Log($"Minimap Position: {minimap.transform.position}");
-            }
+            // // 미니맵 상의 방 좌표 출력
+            // foreach (var minimap in levelGenerator.minimaps) {
+            //     Debug.Log($"Minimap Position: {minimap.transform.position}");
+            // }
 
             MapSpriteSelector newRoomMinimap = levelGenerator.minimaps.Find(m => Vector3.Distance(m.transform.position, newRoomPos) < 20f);
             if (newRoomMinimap != null) {

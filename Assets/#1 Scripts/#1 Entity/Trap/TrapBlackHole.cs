@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TrapBlackHole : MonoBehaviour
 {
-    public float pullForce = 1.5f; // 블랙홀의 당기는 힘
+    public float pullForce = 0.005f; // 블랙홀의 당기는 힘
     // Start is called before the first frame update
     void Start()
     {
@@ -20,30 +20,38 @@ public class TrapBlackHole : MonoBehaviour
     {
         if (other.CompareTag("Player") || other.CompareTag("enemy"))
         {
-            // 블랙홀 중심으로 당기는 방향 계산
-            Vector2 direction = transform.position - other.transform.position;
-            
-            // 캐릭터의 Rigidbody2D에 당기는 힘 추가
-            Rigidbody2D rb = other.GetComponent<Rigidbody2D>();
-
-            if (rb != null)
+            if(other.CompareTag("Player"))
             {
-                if(other.CompareTag("Player"))
+                Player _player = other.GetComponent<Player>();
+                if(_player.IsContainState(PlayerStates.IsDie)
+                || _player.IsContainState(PlayerStates.IsDashing))
                 {
-                    Player _player = other.GetComponent<Player>();
-                    _player.AddState(PlayerStates.IsInBlackHole);
+                    pullForce = 0f;
                 }
-                rb.AddForce(direction.normalized * pullForce, ForceMode2D.Force);
-                Debug.Log("이창조 ㅄ");                
+                else if(!_player.IsContainState(PlayerStates.IsDie)
+                && !_player.IsContainState(PlayerStates.IsDashing))
+                {
+                    pullForce = 0.005f;
+                }
             }
-        }
-    }
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Player _player = other.GetComponent<Player>();
-            _player.RemoveState(PlayerStates.IsInBlackHole);
+            else if(other.CompareTag("enemy"))
+            {
+                pullForce = 0.005f;
+                Enemy _enemy = other.GetComponent<Enemy>();
+                if(_enemy.IsContainState(EnemyStates.IsDie))
+                {
+                    pullForce = 0f;
+                }
+                else if(!_enemy.IsContainState(EnemyStates.IsDie))
+                {
+                    pullForce = 0.005f;
+                }
+            }
+
+            other.transform.position = Vector2.MoveTowards(
+                other.transform.position, 
+                transform.position, 
+                pullForce);
         }
     }
 }

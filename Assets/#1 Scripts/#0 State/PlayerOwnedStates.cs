@@ -93,22 +93,6 @@ namespace PlayerOwnedStates
         }
     }
     
-    public class IsInBlackHole : State<Player>
-    {
-        public override void Enter(Player entity)
-        {
-            
-        }
-        public override void Execute(Player entity)
-        {
-            Debug.Log("블랙호오오오옹ㄹ");
-        }
-        public override void Exit(Player entity)
-        {
-            
-        }
-    }
-
     public class IsDie : State<Player>
     {
         public override void Enter(Player entity)
