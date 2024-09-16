@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4682424822368386}
   - component: {fileID: 212986427594164532}
   - component: {fileID: 61055580650241214}
+  - component: {fileID: 5762124947093179145}
   m_Layer: 11
   m_Name: Lava
   m_TagString: trap
@@ -111,3 +112,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 16, y: 16}
   m_EdgeRadius: 0
+--- !u!114 &5762124947093179145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132586047390324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1eecb87469418a41b5d4d5a37a665d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lavaSpark: {fileID: 1132586047390324, guid: da181bce565930a479ea46a248a6c702, type: 3}

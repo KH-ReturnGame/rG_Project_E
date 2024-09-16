@@ -176,4 +176,16 @@ public class Player_Movement : MonoBehaviour
         // 월드 좌표를 미니맵 좌표로 변환
         return new Vector3(310 + _camTransform.position.x / scaleFactor, 950 + _camTransform.position.y / scaleFactor, 0);
     }
+
+    IEnumerator PlayerSlow()
+    {
+        speed /= 2.5f;
+        yield return new WaitForSeconds(2.5f);
+        speed *= 2.5f;
+    }
+
+    public void Sparked()
+    {
+        StartCoroutine(PlayerSlow());
+    }
 }
