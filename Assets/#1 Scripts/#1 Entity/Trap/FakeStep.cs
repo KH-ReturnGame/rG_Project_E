@@ -15,4 +15,12 @@ public class FakeStep : MonoBehaviour
     {
         
     }
+
+    void OnColliderEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("이벤트 발생");
+        }
+    }
 }
