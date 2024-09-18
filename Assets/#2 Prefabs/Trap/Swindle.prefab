@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4682424822368386}
   - component: {fileID: 212986427594164532}
   - component: {fileID: 61055580650241214}
+  - component: {fileID: 4206661324364950714}
   m_Layer: 11
   m_Name: Swindle
-  m_TagString: trap
+  m_TagString: trigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,3 +112,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 16, y: 16}
   m_EdgeRadius: 0
+--- !u!114 &4206661324364950714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132586047390324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e606f07554101b4ca4ab30792d9807c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
