@@ -10,6 +10,8 @@ public class EnemyMove : MonoBehaviour
     Rigidbody2D target;
     Rigidbody2D rigid;
     public float distance;
+    public float range;
+    public bool fight;
     Enemy enemy;
     //void Attack();
     void Awake()
@@ -27,14 +29,27 @@ public class EnemyMove : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, angle - 90);
 
         distance = Vector2.Distance(player.transform.position, this.transform.position);
-        
+
     }
 
     void FixedUpdate()
     {
-        if(!enemy.IsContainState(EnemyStates.IsKicked) && !enemy.IsContainState(EnemyStates.IsDie) && !enemy.IsContainState(EnemyStates.IsAttacking))
+        if (!enemy.IsContainState(EnemyStates.IsKicked) && !enemy.IsContainState(EnemyStates.IsDie) && !enemy.IsContainState(EnemyStates.IsAttacking))
         {
-            movement();
+            if (enemy.IsContainState(EnemyStates.IsStun))
+            {
+
+            }
+            if (distance < range)
+            {
+                enemy.AddState(EnemyStates.IsAttacking);
+                StartCoroutine(attack());
+                fight = true;
+            }
+            else
+            {
+                movement();
+            }
         }
     }
 
@@ -48,20 +63,6 @@ public class EnemyMove : MonoBehaviour
     {
         Vector2 dirVec = target.position - rigid.position;
         Vector2 nexcVec = dirVec.normalized * speed * Time.fixedDeltaTime;
-        if (enemy.IsContainState(EnemyStates.IsStun))
-        {
-            nexcVec = Vector2.zero;
-        }
-        if (distance < 2f)
-        {
-            enemy.AddState(EnemyStates.IsAttacking);
-            StartCoroutine(attack());
-            nexcVec = Vector2.zero;
-        }
         rigid.MovePosition(rigid.position + nexcVec);
     }
-    /*void Attack()
-    {
-        
-    }*/
 }
