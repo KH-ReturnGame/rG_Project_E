@@ -10,6 +10,7 @@ TagManager:
   - enemy
   - kick
   - trap
+  - enemyattack
   layers:
   - Default
   - TransparentFX
