@@ -5,6 +5,7 @@ using UnityEngine;
 public class TriggerTrap : MonoBehaviour
 {
     int WhatEvent;
+    public GameObject SpiderWeb;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,6 @@ public class TriggerTrap : MonoBehaviour
     {
         if(other.gameObject.CompareTag("kick"))
         {
-            Debug.Log("이벤트 발생");
             Event(WhatEvent);
         }
     }
@@ -37,7 +37,7 @@ public class TriggerTrap : MonoBehaviour
                 StartCoroutine(secondEvent());
                 break;
             case 3:
-                StartCoroutine(thirdEvent());
+                StartCoroutine(thirdEvent(5));
                 break;
             case 4:
                 StartCoroutine(forthEvent());
@@ -50,21 +50,31 @@ public class TriggerTrap : MonoBehaviour
 
     IEnumerator firstEvent() // 화살 발사
     {
-        return null;
+        yield return null;
     }
 
     IEnumerator secondEvent() // 지뢰
     {
-        return null;
+        yield return null;
     }
 
-    IEnumerator thirdEvent() // 거미줄 소환
+    IEnumerator thirdEvent(int webs) // 거미줄 소환
     {
-        return null;   
+        yield return new WaitForSeconds(0.5f);
+        for (int i = 0; i < webs; i++)
+        {
+            float PivotX = Random.Range(-7.5f, 7.5f);
+            float PivotY = Random.Range(-7.5f, 7.5f);
+
+            Vector2 _newPosition = new Vector2(transform.position.x + PivotX, transform.position.y + PivotY);
+
+            GameObject _Web = Instantiate(SpiderWeb, _newPosition, Quaternion.identity);
+        }
+        yield return null;   
     }
 
     IEnumerator forthEvent() // 시한폭탄
     {
-        return null;
+        yield return null;
     }
 }

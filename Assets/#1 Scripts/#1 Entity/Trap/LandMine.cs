@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Step : MonoBehaviour
+public class LandMine : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,18 +14,5 @@ public class Step : MonoBehaviour
     void Update()
     {
         
-    }
-    void OnColliderEnter2D(Collider2D other)
-    {
-        if(other.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("이벤트 발생");
-            Buff();
-        }
-    }
-
-    void Buff()
-    {
-
     }
 }

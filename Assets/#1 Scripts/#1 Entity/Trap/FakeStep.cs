@@ -21,6 +21,7 @@ public class FakeStep : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             Debug.Log("이벤트 발생");
+            DeBuff();
         }
     }
     
