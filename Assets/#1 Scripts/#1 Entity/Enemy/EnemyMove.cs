@@ -34,15 +34,11 @@ public class EnemyMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!enemy.IsContainState(EnemyStates.IsKicked) && !enemy.IsContainState(EnemyStates.IsDie) && !enemy.IsContainState(EnemyStates.IsAttacking))
+        if (!enemy.IsContainState(EnemyStates.IsKicked) && !enemy.IsContainState(EnemyStates.IsDie) && !enemy.IsContainState(EnemyStates.IsAttacking)
+            && !enemy.IsContainState(EnemyStates.IsStun) && !enemy.IsContainState(EnemyStates.IsDetect))
         {
-            if (enemy.IsContainState(EnemyStates.IsStun))
-            {
-
-            }
             if (distance < range)
             {
-                enemy.AddState(EnemyStates.IsAttacking);
                 StartCoroutine(attack());
                 fight = true;
             }
@@ -55,6 +51,10 @@ public class EnemyMove : MonoBehaviour
 
     IEnumerator attack()
     {
+        enemy.AddState(EnemyStates.IsDetect);
+        yield return new WaitForSeconds(1.5f);
+        enemy.RemoveState(EnemyStates.IsDetect);
+        enemy.AddState(EnemyStates.IsAttacking);
         yield return new WaitForSeconds(1.5f);
         enemy.RemoveState(EnemyStates.IsAttacking);
     }
