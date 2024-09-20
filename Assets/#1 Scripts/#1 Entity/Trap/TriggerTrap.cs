@@ -48,22 +48,22 @@ public class TriggerTrap : MonoBehaviour
         }
     }
 
-    IEnumerator firstEvent()
+    IEnumerator firstEvent() // 화살 발사
     {
         return null;
     }
 
-    IEnumerator secondEvent()
+    IEnumerator secondEvent() // 지뢰
     {
         return null;
     }
 
-    IEnumerator thirdEvent()
+    IEnumerator thirdEvent() // 거미줄 소환
     {
         return null;   
     }
 
-    IEnumerator forthEvent()
+    IEnumerator forthEvent() // 시한폭탄
     {
         return null;
     }

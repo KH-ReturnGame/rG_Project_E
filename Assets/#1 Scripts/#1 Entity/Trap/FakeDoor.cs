@@ -20,7 +20,6 @@ public class FakeDoor : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            Debug.Log("?");
             other.gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         }
     }
