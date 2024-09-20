@@ -18,7 +18,7 @@ public class TrapBlackHole : MonoBehaviour
     }
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Player") || other.CompareTag("enemy"))
+        if (other.CompareTag("Player"))
         {
             if(other.CompareTag("Player"))
             {
@@ -34,20 +34,7 @@ public class TrapBlackHole : MonoBehaviour
                     pullForce = 0.005f;
                 }
             }
-            else if(other.CompareTag("enemy"))
-            {
-                pullForce = 0.005f;
-                Enemy _enemy = other.GetComponent<Enemy>();
-                if(_enemy.IsContainState(EnemyStates.IsDie))
-                {
-                    pullForce = 0f;
-                }
-                else if(!_enemy.IsContainState(EnemyStates.IsDie))
-                {
-                    pullForce = 0.005f;
-                }
-            }
-
+            
             other.transform.position = Vector2.MoveTowards(
                 other.transform.position, 
                 transform.position, 
