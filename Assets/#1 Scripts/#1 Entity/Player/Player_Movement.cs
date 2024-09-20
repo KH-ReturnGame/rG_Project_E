@@ -93,12 +93,4 @@ public class Player_Movement : MonoBehaviour
         // 대시 상태 다시 추가
         _player.AddState(PlayerStates.CanDash);
     }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "trap")
-        {
-            _player.AddState(PlayerStates.IsDie);
-        }
-    }
 }

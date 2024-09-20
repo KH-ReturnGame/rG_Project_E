@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48d97bc18ec96b642b2d2991eef9e6f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceAmount: 100
+  KickForce: 100
   forceDirection: {x: 0, y: 1}
 --- !u!1 &1998837954163405244
 GameObject:
@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 1998837954163405250}
   - component: {fileID: 1998837954163405251}
   - component: {fileID: 6221632468829806724}
+  - component: {fileID: 312021826569689755}
   m_Layer: 8
   m_Name: player 1
   m_TagString: Player
@@ -318,3 +319,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 5
+--- !u!114 &312021826569689755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998837954163405244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d35893aae174490995a92e6517c6fc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
