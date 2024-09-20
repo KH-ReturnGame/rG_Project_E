@@ -16,11 +16,12 @@ public class FakeDoor : MonoBehaviour
         
     }
 
-    void OnColliderEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if(other.gameObject.tag == "Player")
         {
-            Debug.Log("이벤트 발생");
+            Debug.Log("?");
+            other.gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         }
     }
 }
