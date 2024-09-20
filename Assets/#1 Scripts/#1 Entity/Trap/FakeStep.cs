@@ -23,4 +23,9 @@ public class FakeStep : MonoBehaviour
             Debug.Log("이벤트 발생");
         }
     }
+    
+    void DeBuff()
+    {
+        
+    }
 }
