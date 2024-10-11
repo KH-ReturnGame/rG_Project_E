@@ -51,8 +51,15 @@ public class TriggerTrap : MonoBehaviour
         }
     }
 
-    IEnumerator firstEvent() // 화살 발사
+    IEnumerator firstEvent() // 가시
     {
+        int objectCount = Random.Range(7, 12); // 상한 미포함, 하한 포함
+        for (int i = 0; i < objectCount; i++)
+        {
+            Vector3 randomPosition = GenerateRandomPosition();
+            Instantiate(Thorn, randomPosition, Quaternion.identity);
+        }
+        yield return null;
         yield return null;
     }
 

@@ -146,4 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bca1e50f6a635441bc32c907c715ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Thorn: {fileID: 1132586047390324, guid: 367b1ed27d9db634d9b93f31d55cf1f6, type: 3}
+  LandMine: {fileID: 1132586047390324, guid: 779dccb25dc52dc45a0aa3af4cc0cc7b, type: 3}
   SpiderWeb: {fileID: 1132586047390324, guid: 5d1ac9046bca53f48a390a36c238c578, type: 3}
+  TimeBomb: {fileID: 1132586047390324, guid: cbc9f3f231bd3724ebfbed3ea142e93e, type: 3}
