@@ -58,6 +58,12 @@ public class TriggerTrap : MonoBehaviour
 
     IEnumerator secondEvent() // 지뢰
     {
+        int objectCount = Random.Range(15, 21); // 상한 미포함, 하한 포함
+        for (int i = 0; i < objectCount; i++)
+        {
+            Vector3 randomPosition = GenerateRandomPosition();
+            Instantiate(LandMine, randomPosition, Quaternion.identity);
+        }
         yield return null;
     }
 
@@ -79,6 +85,18 @@ public class TriggerTrap : MonoBehaviour
 
     IEnumerator forthEvent() // 시한폭탄
     {
+        Instantiate(TimeBomb, transform.position, Quaternion.identity);
         yield return null;
+    }
+
+    Vector3 GenerateRandomPosition()
+    {
+            // 범위 내에서 무작위 2D 좌표 생성 (원형 범위)
+            float angle = Random.Range(0f, Mathf.PI * 2); // 무작위 각도
+            float distance = Random.Range(0f, 10); // 무작위 거리
+            float x = Mathf.Cos(angle) * distance;
+            float y = Mathf.Sin(angle) * distance;
+
+            return new Vector3(x, y, 0); // 2D에서는 Z축을 0으로 설정
     }
 }
