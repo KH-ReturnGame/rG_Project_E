@@ -13,7 +13,7 @@ public class TriggerTrap : MonoBehaviour
     void Start()
     {
         // WhatEvent = Random.Range(0,4);
-        WhatEvent = 2;
+        WhatEvent = 1;
     }
 
     // Update is called once per frame
@@ -105,7 +105,7 @@ public class TriggerTrap : MonoBehaviour
         float distance = Random.Range(0f, 10); // 무작위 거리
         float x = Mathf.Cos(angle) * distance;
         float y = Mathf.Sin(angle) * distance;
-        
+
         return new Vector3(x, y, 0); // 2D에서는 Z축을 0으로 설정
     }
 }
