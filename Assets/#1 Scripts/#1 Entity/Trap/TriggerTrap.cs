@@ -5,7 +5,10 @@ using UnityEngine;
 public class TriggerTrap : MonoBehaviour
 {
     int WhatEvent;
+    public GameObject Thorn;
+    public GameObject LandMine;
     public GameObject SpiderWeb;
+    public GameObject TimeBomb;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +64,7 @@ public class TriggerTrap : MonoBehaviour
     IEnumerator thirdEvent(int webs) // 거미줄 소환
     {
         yield return new WaitForSeconds(0.5f);
+        
         for (int i = 0; i < webs; i++)
         {
             float PivotX = Random.Range(-7.5f, 7.5f);
