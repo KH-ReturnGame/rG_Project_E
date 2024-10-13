@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 4682424822368386}
   - component: {fileID: 212986427594164532}
   - component: {fileID: 61055580650241214}
-  m_Layer: 9
-  m_Name: ObstacleTile
-  m_TagString: wall
+  - component: {fileID: 7872149039019411706}
+  - component: {fileID: 673436530175379177}
+  m_Layer: 11
+  m_Name: TriggerTrap
+  m_TagString: trigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 78ba84456044a7745b480444e585bedb, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 168c33633e1ae8544a40cddf7c9dd117, type: 3}
+  m_Color: {r: 1, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -111,3 +113,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 16, y: 16}
   m_EdgeRadius: 0
+--- !u!50 &7872149039019411706
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132586047390324}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &673436530175379177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132586047390324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bca1e50f6a635441bc32c907c715ca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Thorn: {fileID: 1132586047390324, guid: 367b1ed27d9db634d9b93f31d55cf1f6, type: 3}
+  LandMine: {fileID: 1132586047390324, guid: 779dccb25dc52dc45a0aa3af4cc0cc7b, type: 3}
+  SpiderWeb: {fileID: 1132586047390324, guid: 5d1ac9046bca53f48a390a36c238c578, type: 3}
+  TimeBomb: {fileID: 1132586047390324, guid: cbc9f3f231bd3724ebfbed3ea142e93e, type: 3}

@@ -22,7 +22,15 @@ public class skill : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             if (!_player.IsContainState(PlayerStates.IsDie))
-                StartCoroutine(Kick());
+            {
+                if(!_player.IsContainState(PlayerStates.IsDebuff)){
+                    StartCoroutine(Kick());
+                }
+                else{
+                    // 킥 불발 소리 재생
+                    Debug.Log("응 안돼");
+                }
+            }
         }
         if (_player.IsContainState(PlayerStates.IsAttacking))
         {

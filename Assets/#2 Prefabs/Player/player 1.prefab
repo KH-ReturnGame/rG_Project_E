@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 1998837954163405251}
   - component: {fileID: 6221632468829806724}
   - component: {fileID: 4050893217746559609}
+  - component: {fileID: 1684052839800310004}
   m_Layer: 8
   m_Name: player 1
   m_TagString: Player
@@ -290,20 +291,29 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
+      inSlope: 1.0000001
+      outSlope: 1.0000001
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.49695498
+      value: 0.496955
       inSlope: 1
       outSlope: 1
       tangentMode: 34
       weightedMode: 0
-      inWeight: 0
-      outWeight: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 1
-      outSlope: 1
+      inSlope: 0.9999999
+      outSlope: 0.9999999
       tangentMode: 34
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -331,5 +341,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5bfd68d7a3ff8e40a667491af03b8aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1684052839800310004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998837954163405244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d35893aae174490995a92e6517c6fc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
