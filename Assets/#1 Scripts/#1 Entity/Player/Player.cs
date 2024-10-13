@@ -14,6 +14,8 @@ public enum PlayerStates
     CanDefence,
     IsDefencing,
     IsAttacking,
+    IsBuff,
+    IsDebuff,
     IsDie,
 }
 
@@ -47,6 +49,8 @@ public class Player : Entity
         _states[(int)PlayerStates.CanDefence] = new PlayerOwnedStates.CanDefence();
         _states[(int)PlayerStates.IsDefencing] = new PlayerOwnedStates.IsDefencing();
         _states[(int)PlayerStates.IsAttacking] = new PlayerOwnedStates.IsAttacking();
+        _states[(int)PlayerStates.IsBuff] = new PlayerOwnedStates.IsBuff();
+        _states[(int)PlayerStates.IsDebuff] = new PlayerOwnedStates.IsDebuff();
         _states[(int)PlayerStates.IsDie] = new PlayerOwnedStates.IsDie();
 
         _stateManager = new StateManager<Player>();
