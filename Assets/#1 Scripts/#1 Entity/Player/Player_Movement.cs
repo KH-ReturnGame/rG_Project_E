@@ -111,16 +111,6 @@ public class Player_Movement : MonoBehaviour
         // 대시 상태 다시 추가
         _player.AddState(PlayerStates.CanDash);
     }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "trap" 
-        && !_player.IsContainState(PlayerStates.IsDashing) 
-        && !_player.IsContainState(PlayerStates.IsDefencing))
-        {
-            _player.AddState(PlayerStates.IsDie);
-        }
-    }
     void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag("door")) { // assuming the door has the tag "Door"
 			Vector3 doorDirection = Vector3.zero;
@@ -155,12 +145,12 @@ public class Player_Movement : MonoBehaviour
             Vector3 miniMapOffset = CalculateMiniMapOffset();//미니맵 오프셋 조정
             Vector3 newRoomPos = miniMapOffset;
 
-            Debug.Log($"New Room Position: {newRoomPos}");
+            // Debug.Log($"New Room Position: {newRoomPos}");
 
-            // 미니맵 상의 방 좌표 출력
-            foreach (var minimap in levelGenerator.minimaps) {
-                Debug.Log($"Minimap Position: {minimap.transform.position}");
-            }
+            // // 미니맵 상의 방 좌표 출력
+            // foreach (var minimap in levelGenerator.minimaps) {
+            //     Debug.Log($"Minimap Position: {minimap.transform.position}");
+            // }
 
             MapSpriteSelector newRoomMinimap = levelGenerator.minimaps.Find(m => Vector3.Distance(m.transform.position, newRoomPos) < 20f);
             if (newRoomMinimap != null) {
@@ -175,5 +165,17 @@ public class Player_Movement : MonoBehaviour
     
         // 월드 좌표를 미니맵 좌표로 변환
         return new Vector3(310 + _camTransform.position.x / scaleFactor, 950 + _camTransform.position.y / scaleFactor, 0);
+    }
+
+    IEnumerator PlayerSlow()
+    {
+        speed /= 2.5f;
+        yield return new WaitForSeconds(2.5f);
+        speed *= 2.5f;
+    }
+
+    public void Sparked()
+    {
+        StartCoroutine(PlayerSlow());
     }
 }

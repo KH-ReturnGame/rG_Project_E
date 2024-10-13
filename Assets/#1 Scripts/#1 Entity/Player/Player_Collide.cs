@@ -5,19 +5,30 @@ using UnityEngine;
 public class Player_Collide : MonoBehaviour
 {
     private Player _player;
-    private Tilemap tilemap;
-
 
     public void Start()
     {
         _player = this.GetComponentInParent<Player>();
-        tilemap = GameObject.FindGameObjectWithTag("ground").GetComponent<Tilemap>();
     }
 
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "trap" 
+        && !_player.IsContainState(PlayerStates.IsDashing) 
+        && !_player.IsContainState(PlayerStates.IsDefencing))
+        {
+            _player.AddState(PlayerStates.IsDie);
+        }
+    }
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-
+        if(other.gameObject.tag == "trap" 
+        && !_player.IsContainState(PlayerStates.IsDashing) 
+        && !_player.IsContainState(PlayerStates.IsDefencing))
+        {
+            _player.AddState(PlayerStates.IsDie);
+        }
     }
 
     public void OnTriggerExit2D(Collider2D other)

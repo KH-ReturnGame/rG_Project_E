@@ -11,6 +11,7 @@ TagManager:
   - kick
   - trap
   - door
+  - trigger
   layers:
   - Default
   - TransparentFX
