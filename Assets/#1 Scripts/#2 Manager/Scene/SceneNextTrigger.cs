@@ -25,8 +25,8 @@ public class SceneNextTrigger : MonoBehaviour
         }
     }
 
-    public void SceneChange()
+    public void SceneChange(string _nextScene)
     {
-        SceneLoadManager.Instance.LoadScene(NextScene);
+        SceneLoadManager.Instance.LoadScene(_nextScene);
     }
 }
