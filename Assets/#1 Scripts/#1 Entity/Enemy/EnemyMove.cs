@@ -20,6 +20,7 @@ public class EnemyMove : MonoBehaviour
         target = player.GetComponent<Rigidbody2D>();
         rigid = GetComponent<Rigidbody2D>();
         enemy = GetComponent<Enemy>();
+        Debug.Log("asdsf");
     }
     void Update()
     {
@@ -54,6 +55,7 @@ public class EnemyMove : MonoBehaviour
         enemy.AddState(EnemyStates.IsDetect);
         yield return new WaitForSeconds(1.5f);
         enemy.RemoveState(EnemyStates.IsDetect);
+
         enemy.AddState(EnemyStates.IsAttacking);
         yield return new WaitForSeconds(1.5f);
         enemy.RemoveState(EnemyStates.IsAttacking);

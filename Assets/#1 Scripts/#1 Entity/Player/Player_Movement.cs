@@ -59,7 +59,6 @@ public class Player_Movement : MonoBehaviour
     {
         inputVec.x = Input.GetAxisRaw("Horizontal");
         inputVec.y = Input.GetAxisRaw("Vertical");
-
         Vector2 nextVec = inputVec.normalized * speed * Time.fixedDeltaTime;
         _playerRigid.MovePosition(_playerRigid.position + nextVec);
     }
