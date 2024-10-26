@@ -59,7 +59,8 @@ public class skill : MonoBehaviour
             Rigidbody2D rigid = other.gameObject.GetComponent<Rigidbody2D>();
             Vector2 direction = (other.transform.position - transform.position).normalized;
 
-            rigid.AddForce(direction * KickForce, ForceMode2D.Impulse);
+            rigid.AddForce(direction * KickForce, ForceMode2D.Impulse);  
+            AudioManager.instance.PlaySFX(AudioManager.SFX_enum.Kick);
             // 법선 방향으로 enemy힘주기
         }
     }
