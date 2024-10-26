@@ -47,7 +47,6 @@ public class skill : MonoBehaviour
     IEnumerator Kick()
     {
         _player.AddState(PlayerStates.IsAttacking);
-        AudioManager.instance.PlaySFX(AudioManager.SFX_enum.Kick);
         yield return new WaitForSeconds(.3f);//발차는 시간 0.3초
         _player.RemoveState(PlayerStates.IsAttacking);
         yield return null;
@@ -60,7 +59,8 @@ public class skill : MonoBehaviour
             Rigidbody2D rigid = other.gameObject.GetComponent<Rigidbody2D>();
             Vector2 direction = (other.transform.position - transform.position).normalized;
 
-            rigid.AddForce(direction * KickForce, ForceMode2D.Impulse);
+            rigid.AddForce(direction * KickForce, ForceMode2D.Impulse);  
+            AudioManager.instance.PlaySFX(AudioManager.SFX_enum.Kick);
             // 법선 방향으로 enemy힘주기
         }
     }
