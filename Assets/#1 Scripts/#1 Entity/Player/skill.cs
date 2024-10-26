@@ -47,6 +47,7 @@ public class skill : MonoBehaviour
     IEnumerator Kick()
     {
         _player.AddState(PlayerStates.IsAttacking);
+        AudioManager.instance.PlaySFX(AudioManager.SFX_enum.Kick);
         yield return new WaitForSeconds(.3f);//발차는 시간 0.3초
         _player.RemoveState(PlayerStates.IsAttacking);
         yield return null;
