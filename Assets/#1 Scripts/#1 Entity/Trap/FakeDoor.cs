@@ -22,5 +22,9 @@ public class FakeDoor : MonoBehaviour
         {
             other.gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         }
+        if(other.gameObject.tag == "wall")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
