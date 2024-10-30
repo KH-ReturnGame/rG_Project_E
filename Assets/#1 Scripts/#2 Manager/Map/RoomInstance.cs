@@ -15,6 +15,7 @@ public class RoomInstance : MonoBehaviour {
 	ColorToGameObject[] mappings;
 	float tileSize = 16;
 	Vector2 roomSizeInTiles = new Vector2(9,17);
+	
 	public void Setup(Texture2D _tex, Vector2 _gridPos, int _type, bool _doorTop, bool _doorBot, bool _doorLeft, bool _doorRight){
 		tex = _tex;
 		gridPos = _gridPos;
@@ -49,13 +50,13 @@ public class RoomInstance : MonoBehaviour {
 
 	void PlaceDoor(Vector3 spawnPos, bool door, GameObject doorSpawn){
 		// check whether its a door or wall, then spawn
-		//Vector3 scaledSpawnPos = new Vector3(spawnPos.x/5, spawnPos.y/5, spawnPos.z);
 		if (door){
 			Instantiate(doorSpawn, spawnPos, Quaternion.identity).transform.parent = transform;
 		}else{
 			Instantiate(doorWall, spawnPos, Quaternion.identity).transform.parent = transform;
 		}
 	}
+
 	void GenerateRoomTiles(){
 		//loop through every pixel of the texture
 		for(int x = 0; x < tex.width; x++){
@@ -64,15 +65,15 @@ public class RoomInstance : MonoBehaviour {
 			}
 		}
 	}
+
 	void GenerateTile(int x, int y){
 		Color pixelColor = tex.GetPixel(x,y);
 		//skip clear spaces in texture
 		if (pixelColor.a == 0){
 			return;
 		}
-		//find the color to math the pixel
 		foreach (ColorToGameObject mapping in mappings){
-			if (mapping.color.Equals(pixelColor)){
+			if (ColorsAreSimilar(mapping.color, pixelColor)){
 				Vector3 spawnPos = positionFromTileGrid(x,y);
 				Instantiate(mapping.prefab, spawnPos, Quaternion.identity).transform.parent = this.transform;
 			}else{
@@ -81,6 +82,13 @@ public class RoomInstance : MonoBehaviour {
 			}
 		}
 	}
+
+	bool ColorsAreSimilar(Color color1, Color color2, float tolerance = 0.1f) {
+        return Mathf.Abs(color1.r - color2.r) < tolerance &&
+               Mathf.Abs(color1.g - color2.g) < tolerance &&
+               Mathf.Abs(color1.b - color2.b) < tolerance;
+    }
+
 	Vector3 positionFromTileGrid(int x, int y) 
 	{
     	float scaleFactor = 0.2f; // 방 크기 축소에 따른 스케일링 팩터
