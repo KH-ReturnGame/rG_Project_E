@@ -77,7 +77,7 @@ public class RoomInstance : MonoBehaviour {
 				Instantiate(mapping.prefab, spawnPos, Quaternion.identity).transform.parent = this.transform;
 			}else{
 				//forgot to remove the old print for the tutorial lol so I'll leave it here too
-				//print(mapping.color + ", " + pixelColor);
+				Debug.Log(mapping.color + ", " + pixelColor);
 			}
 		}
 	}
