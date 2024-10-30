@@ -7,16 +7,22 @@ public class ArrowLauncher : MonoBehaviour
     public GameObject Arrow;
     public float cooldown;
     public int type; // 1 : 동, 2 : 서, 3 : 남, 4 : 북
+    public LayerMask layerMask;
+    private bool _check;
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(LaunchArrow());
+        _check = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(_check)
+        {
+            CheckRaycasts();
+        }
     }
 
     IEnumerator LaunchArrow()
@@ -46,5 +52,52 @@ public class ArrowLauncher : MonoBehaviour
         yield return new WaitForSeconds(cooldown); // 쿨다운
 
         StartCoroutine(LaunchArrow());
+    }
+
+    void CheckRaycasts()
+    {
+        // 상, 하, 좌, 우 방향 벡터
+        Vector2[] directions = { Vector2.up, Vector2.down, Vector2.left, Vector2.right };
+
+        foreach (var direction in directions)
+        {
+            // 레이캐스트를 특정 방향으로 쏨
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 4f, layerMask);
+
+            if (hit.collider != null)
+            {
+                Debug.Log(hit.collider.name);
+            }
+            // 충돌했을 경우 처리
+            if (hit.collider != null && hit.collider.CompareTag("wall"))
+            {
+                if (direction == Vector2.up)
+                {
+                    type = 3;
+                    _check = false;
+                }
+                else if (direction == Vector2.down)
+                {
+                    type = 4;
+                    _check = false;
+                }
+                else if (direction == Vector2.left)
+                {
+                    type = 1;
+                    _check = false;
+                }
+                else if (direction == Vector2.right)
+                {
+                    type = 2;
+                    _check = false;
+                }
+                else
+                {
+                    type = 1;
+                    _check = false;
+                }
+            }
+            Debug.DrawRay(transform.position, direction * 4f, Color.red);
+        }
     }
 }
