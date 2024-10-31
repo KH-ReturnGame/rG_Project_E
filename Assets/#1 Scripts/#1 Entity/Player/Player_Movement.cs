@@ -138,8 +138,6 @@ public class Player_Movement : MonoBehaviour
             if (currentRoomMinimap != null) {
                 currentRoomMinimap.type = 0;
                 currentRoomMinimap.PickColor(); // 색상 업데이트
-                Debug.Log(currentRoomMinimap.transform.position.x);
-                Debug.Log(currentRoomMinimap.transform.position.y);
             }
             
             Vector3 miniMapOffset = CalculateMiniMapOffset();//미니맵 오프셋 조정
