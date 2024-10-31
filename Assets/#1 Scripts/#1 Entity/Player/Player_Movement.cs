@@ -127,7 +127,7 @@ public class Player_Movement : MonoBehaviour
 			}
 
 			// 플레이어 위치를 이동시킵니다.
-            transform.position += new Vector3(doorDirection.x * moveJump.x * 0.9f, doorDirection.y * moveJump.y * 0.9f, 0);
+            transform.position += new Vector3(doorDirection.x * moveJump.x * 0.8875f, doorDirection.y * moveJump.y * 0.895f, 0);
             _camborderTransform.position += new Vector3(doorDirection.x * moveJump.x, doorDirection.y * moveJump.y, 0);
             _camTransform.position = new Vector3(transform.position.x, transform.position.y, 0);
 			// 필요한 경우 여기서 추가적인 맵 로딩 로직을 수행할 수 있습니다.
