@@ -36,7 +36,7 @@ public class FakeDoor : MonoBehaviour
         DoorSprite.enabled = true;
         DoorCollider.enabled = true;
 
-        float cool = Random.Range(2.5f, 5f);
+        float cool = Random.Range(2.5f, 7.5f);
 
         yield return new WaitForSeconds(cool);
 
