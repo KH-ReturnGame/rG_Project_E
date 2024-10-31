@@ -39,7 +39,6 @@ public class TrapMoving : MonoBehaviour
         if(other.gameObject.Equals(pivot1))
         {
             direction = 2;
-            Debug.Log("Moving to pivot2");
         }
         else if(other.gameObject.Equals(pivot2))
         {

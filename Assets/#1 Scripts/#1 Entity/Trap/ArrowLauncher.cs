@@ -44,7 +44,7 @@ public class ArrowLauncher : MonoBehaviour
                 ArrowObj.transform.rotation = Quaternion.Euler(0, 0, 90);
                 break;
             default:
-                Debug.Log("Invalid direction type");
+                //Debug.Log("Invalid direction type");
                 break;
         }
         _arrow.ChangeType(type);
@@ -65,11 +65,6 @@ public class ArrowLauncher : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, 4f, layerMask);
 
             if (hit.collider != null)
-            {
-                Debug.Log(hit.collider.name);
-            }
-            // 충돌했을 경우 처리
-            if (hit.collider != null && hit.collider.CompareTag("wall"))
             {
                 if (direction == Vector2.up)
                 {
