@@ -6,11 +6,11 @@ public class Arrow : MonoBehaviour
 {
     public float duration;
     private int arrowType;
-    private float LaunchSpeed;
+    public float LaunchSpeed;
     // Start is called before the first frame update
     void Start()
     {
-        LaunchSpeed = 0.25f;
+        LaunchSpeed = 0.4f;
         StartCoroutine(DestroyArrow());
     }
 
