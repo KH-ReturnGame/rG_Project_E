@@ -5,10 +5,12 @@ using UnityEngine;
 public class Player_Collide : MonoBehaviour
 {
     private Player _player;
+    Player_Defence player_Defence;
 
     public void Start()
     {
         _player = this.GetComponentInParent<Player>();
+        player_Defence = GetComponent<Player_Defence>();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -18,6 +20,12 @@ public class Player_Collide : MonoBehaviour
         && !_player.IsContainState(PlayerStates.IsDefencing))
         {
             _player.AddState(PlayerStates.IsDie);
+        }
+
+        if(collision.gameObject.name == "Arrow(Clone)"
+        && _player.IsContainState(PlayerStates.IsDefencing))
+        {
+            Parrying();
         }
     }
 
@@ -34,5 +42,10 @@ public class Player_Collide : MonoBehaviour
     public void OnTriggerExit2D(Collider2D other)
     {
 
+    }
+
+    void Parrying()
+    {
+        
     }
 }

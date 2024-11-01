@@ -10,7 +10,7 @@ public class Arrow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LaunchSpeed = 0.4f;
+        LaunchSpeed = 0.275f;
         StartCoroutine(DestroyArrow());
     }
 
