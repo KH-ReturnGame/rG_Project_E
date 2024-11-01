@@ -25,7 +25,12 @@ public class Player_Collide : MonoBehaviour
         if(collision.gameObject.name == "Arrow(Clone)"
         && _player.IsContainState(PlayerStates.IsDefencing))
         {
-            Parrying();
+            Arrow _arrow = collision.gameObject.GetComponent<Arrow>();
+            _arrow.arrowType += 2;
+            if(_arrow.arrowType > 4)
+            {
+                _arrow.arrowType -= 4;
+            }
         }
     }
 
@@ -42,10 +47,5 @@ public class Player_Collide : MonoBehaviour
     public void OnTriggerExit2D(Collider2D other)
     {
 
-    }
-
-    void Parrying()
-    {
-        
     }
 }
