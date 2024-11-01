@@ -10,7 +10,7 @@ public class Player_Defence : MonoBehaviour
     void Start()
     {
         _player = GetComponent<Player>();
-        _DefenceCooldown = 2.5f;
+        _DefenceCooldown = 0.75f;
         _player.AddState(PlayerStates.CanDefence);
     }
 
