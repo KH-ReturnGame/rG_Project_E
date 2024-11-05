@@ -10,10 +10,13 @@ public class ArrowLauncher : MonoBehaviour
     public LayerMask layerMask;
     private bool _check;
     // Start is called before the first frame update
+    SpriteRenderer _spriteRenderer;
+    public Sprite[] _Launchers;
     void Start()
     {
         StartCoroutine(LaunchArrow());
         _check = true;
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -69,30 +72,35 @@ public class ArrowLauncher : MonoBehaviour
                 if (direction == Vector2.up)
                 {
                     type = 3;
+                    _spriteRenderer.sprite= _Launchers[2];
                     _check = false;
                 }
                 else if (direction == Vector2.down)
                 {
                     type = 4;
+                    _spriteRenderer.sprite = _Launchers[3];
                     _check = false;
                 }
                 else if (direction == Vector2.left)
                 {
                     type = 1;
+                    _spriteRenderer.sprite = _Launchers[0];
                     _check = false;
                 }
                 else if (direction == Vector2.right)
                 {
                     type = 2;
+                    _spriteRenderer.sprite = _Launchers[1];
                     _check = false;
                 }
                 else
                 {
                     type = 1;
+                    _spriteRenderer.sprite = _Launchers[0];
                     _check = false;
                 }
             }
-            Debug.DrawRay(transform.position, direction * 4f, Color.red);
+            Debug.DrawRay(transform.position, direction * 4f, Color.green);
         }
     }
 }
