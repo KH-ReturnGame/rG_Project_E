@@ -15,14 +15,14 @@ public class dash_enemy : MonoBehaviour
     public bool fight;
     Enemy enemy;
     //void Attack();
-    void Awake()                //½ÃÀÛ
+    void Awake()                //ï¿½ï¿½ï¿½ï¿½
     {
         player = GameObject.Find("player 1(Clone)");
         target = player.GetComponent<Rigidbody2D>();
         rigid = GetComponent<Rigidbody2D>();
         enemy = GetComponent<Enemy>();
-        Debug.Log("asdsf");
     }
+    
     void Update()
     {
         angle = Mathf.Atan2(player.transform.position.y - transform.position.y,
@@ -31,13 +31,15 @@ public class dash_enemy : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, angle - 90);
 
         distance = Vector2.Distance(player.transform.position, this.transform.position);
-
     }
 
     void FixedUpdate()
     {
-        if (!enemy.IsContainState(EnemyStates.IsKicked) && !enemy.IsContainState(EnemyStates.IsDie) && !enemy.IsContainState(EnemyStates.IsAttacking)
-            && !enemy.IsContainState(EnemyStates.IsStun) && !enemy.IsContainState(EnemyStates.IsDetect))
+        if (!enemy.IsContainState(EnemyStates.IsKicked) 
+            && !enemy.IsContainState(EnemyStates.IsDie) 
+            && !enemy.IsContainState(EnemyStates.IsAttacking)
+            && !enemy.IsContainState(EnemyStates.IsStun) 
+            && !enemy.IsContainState(EnemyStates.IsDetect))
         {
             if (distance < range)
             {
@@ -51,14 +53,17 @@ public class dash_enemy : MonoBehaviour
         }
     }
 
-    IEnumerator attack()
+    IEnumerator attack()// ëŒ€ì‰¬ ê³µê²©
     {
         enemy.AddState(EnemyStates.IsDetect);
-        yield return new WaitForSeconds(1.5f);
-        enemy.RemoveState(EnemyStates.IsDetect);
 
-        enemy.AddState(EnemyStates.IsAttacking);
         yield return new WaitForSeconds(1.5f);
+        
+        enemy.RemoveState(EnemyStates.IsDetect);
+        enemy.AddState(EnemyStates.IsAttacking);
+        
+        yield return new WaitForSeconds(1.5f);
+        
         Vector2 direction = (player.transform.position - transform.position).normalized;
         rigid.AddForce(direction * 100, ForceMode2D.Impulse);
         enemy.RemoveState(EnemyStates.IsAttacking);
