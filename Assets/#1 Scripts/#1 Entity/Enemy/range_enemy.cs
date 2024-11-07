@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class range_enemy : MonoBehaviour
 {
+    Rigidbody2D rigid;
     void Awake()
     {
-        int speed = 10;
+        rigid = GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate()
     {
-        Vector2 dirVec = target.position - rigid.position;
-        Vector2 nexcVec = dirVec.normalized * speed * Time.fixedDeltaTime;
-        rigid.MovePosition(rigid.position + nexcVec);
+        
     }
 }
