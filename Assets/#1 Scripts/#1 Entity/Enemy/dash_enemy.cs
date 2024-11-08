@@ -21,6 +21,7 @@ public class dash_enemy : MonoBehaviour
         target = player.GetComponent<Rigidbody2D>();
         rigid = GetComponent<Rigidbody2D>();
         enemy = GetComponent<Enemy>();
+        
     }
     
     void Update()
@@ -61,12 +62,12 @@ public class dash_enemy : MonoBehaviour
         
         enemy.RemoveState(EnemyStates.IsDetect);
         enemy.AddState(EnemyStates.IsAttacking);
-        
-        yield return new WaitForSeconds(1.5f);
-        
+        enemy.AddState(EnemyStates.IsKicked);
         Vector2 direction = (player.transform.position - transform.position).normalized;
         rigid.AddForce(direction * 100, ForceMode2D.Impulse);
+        yield return new WaitForSeconds(1.5f);
         enemy.RemoveState(EnemyStates.IsAttacking);
+        enemy.RemoveState(EnemyStates.IsKicked);
     }
 
     void movement()
