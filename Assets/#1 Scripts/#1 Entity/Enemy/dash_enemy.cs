@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class dash_enemy : MonoBehaviour
 {
-    float dashspeed = 1;
+    float dashspeed = 100;
     GameObject player;
     float angle;
     public float speed;
@@ -15,7 +15,7 @@ public class dash_enemy : MonoBehaviour
     public bool fight;
     Enemy enemy;
     //void Attack();
-    void Awake()                //����
+    void Awake()
     {
         player = GameObject.Find("player 1(Clone)");
         target = player.GetComponent<Rigidbody2D>();
@@ -64,7 +64,7 @@ public class dash_enemy : MonoBehaviour
         enemy.AddState(EnemyStates.IsAttacking);
         enemy.AddState(EnemyStates.IsKicked);
         Vector2 direction = (player.transform.position - transform.position).normalized;
-        rigid.AddForce(direction * 100, ForceMode2D.Impulse);
+        rigid.AddForce(direction * dashspeed, ForceMode2D.Impulse);
         yield return new WaitForSeconds(1.5f);
         enemy.RemoveState(EnemyStates.IsAttacking);
         enemy.RemoveState(EnemyStates.IsKicked);
