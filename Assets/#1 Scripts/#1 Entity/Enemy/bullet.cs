@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
+    Vector2 dirction = new Vector2();
+    bool alive = true;
+    int dead = 0;
+    float dashspeed = 100;
     GameObject player;
     float angle;
     public float speed;
@@ -13,54 +17,36 @@ public class bullet : MonoBehaviour
     public float range;
     public bool fight;
     Enemy enemy;
-    //void Attack();
     void Awake()
     {
         player = GameObject.Find("player 1(Clone)");
         target = player.GetComponent<Rigidbody2D>();
         rigid = GetComponent<Rigidbody2D>();
         enemy = GetComponent<Enemy>();
-        StartCoroutin(Life());
+        StartCoroutine(lifetime());
     }
-    
-    void Update()
-    {
 
+    IEnumerator lifetime()
+    {
+        yield return new WaitForSeconds(3);
+        alive = false;
+        Vector2 direction = (player.transform.position - transform.position).normalized;
+        rigid.AddForce(direction * dashspeed, ForceMode2D.Impulse);
+        Destroy(this,5);
     }
 
     void FixedUpdate()
     {
-        if (enemy.IsContainState(EnemyStates.IsMove))
+        if (alive)
         {
-            Bmovement();
-        }
-        else if (enemy.IsContainState(EnemyStates.IsAttacking))
-        {
-            Amovement();
+            movement();
         }
     }
 
-    void Bmovement()
+    void movement()
     {
         Vector2 dirVec = target.position - rigid.position;
         Vector2 nexcVec = dirVec.normalized * speed * Time.fixedDeltaTime;
         rigid.MovePosition(rigid.position + nexcVec);
-    }
-
-    void Amovement()
-        Vector2 direction = (player.transform.position - transform.position).normalized;
-        rigid.AddForce(direction* dashspeed, ForceMode2D.Impulse);
-    }
-
-    IEnumerator Life()
-    {
-        enemy.AddState(EnemyStates.IsMove);
-        yield return new WaitForSeconds(2.0f);
-        enemy.RemoveState(EnemyStates.IsMove);
-        enemy.AddState(EnemyStates.IsAttacking);
-
-        yield return new WaitForSeconds(1.0f);
-        enemy.RemoveState(EnemyStates.IsAttacking);
-        enemy.AddState(EnemyStates.IsDie);
     }
 }
