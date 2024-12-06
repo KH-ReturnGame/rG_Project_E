@@ -154,7 +154,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &72622421
 MonoBehaviour:
@@ -169,12 +169,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sheetsNormal:
-  - {fileID: 2800000, guid: 5d4c4f40a1564c444887e7999c48d18d, type: 3}
-  - {fileID: 2800000, guid: dc7b8578c102bd546bd34dc9a366a8f0, type: 3}
-  - {fileID: 2800000, guid: 73332cb71d001244fb5ab7bc35af61a8, type: 3}
-  - {fileID: 2800000, guid: 99ae6df318064444bb24dd898bd356a5, type: 3}
-  - {fileID: 2800000, guid: 1d48a76d657a5804c9beacc313aec3ad, type: 3}
-  - {fileID: 2800000, guid: 564d6ca77f8ea7041bf378157f5feba0, type: 3}
+  - {fileID: 2800000, guid: 6a454f9f1322d1d4090797e277d30cbd, type: 3}
+  - {fileID: 2800000, guid: 36430719cb64c934ca5176b6fa6a4c7b, type: 3}
+  - {fileID: 2800000, guid: 9c075a171e30bed4a9bbe8ffd97c2af3, type: 3}
+  - {fileID: 2800000, guid: 91b0ef8aef2b90342bbad1c36a6e278b, type: 3}
+  - {fileID: 2800000, guid: 3876e60fce592af42ad845f9b67ac9c9, type: 3}
+  - {fileID: 2800000, guid: 489f751b0c97cfd479b40503e563c9c0, type: 3}
+  - {fileID: 2800000, guid: 62b15a585b939fc4abc9b3c029343fba, type: 3}
+  - {fileID: 2800000, guid: ace3fbcf8daf49d49b4d0289e7c776b5, type: 3}
+  - {fileID: 2800000, guid: 743e2fb612927de41b1a6adef94aca0a, type: 3}
+  - {fileID: 2800000, guid: a9f5aeb0635c3544f9ba76c57e5584a8, type: 3}
+  - {fileID: 2800000, guid: c9fc5178a4ff8d042a9e2174cb84ede5, type: 3}
+  - {fileID: 2800000, guid: 3fc09915f1914e24dadba6e0884af5a3, type: 3}
+  - {fileID: 2800000, guid: cf9965a7b9fff6349a107e945337e0af, type: 3}
+  - {fileID: 2800000, guid: f6041251352373247811de56bf9efdac, type: 3}
+  - {fileID: 2800000, guid: c2a96881742ae9249953e6c92b9fcdd5, type: 3}
   RoomObj: {fileID: 1038065722679700, guid: 092b915af527d594aa11083a065a8de8, type: 3}
   roomDimensions: {x: 272, y: 144}
   gutterSize: {x: 144, y: 64}
@@ -347,7 +356,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &714517891
 GameObject:
@@ -416,7 +425,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &714517895
 MonoBehaviour:
@@ -684,6 +693,66 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &922567955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 922567956}
+  - component: {fileID: 922567957}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &922567956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922567955}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.5201105, y: -1.9996163, z: -0.06981735}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &922567957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922567955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d03e3c7a0031be440b0638c1e4ab67e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MasterVolume: 0.5
+  bgmClip: {fileID: 0}
+  bgmVolume: 0.25
+  sfxClips:
+  - {fileID: 8300000, guid: 534740200b124ad4fb985ac9d4385472, type: 3}
+  - {fileID: 8300000, guid: b7db7ff580d9848ed8f011953f466b66, type: 3}
+  - {fileID: 8300000, guid: a37f44cbf8c2a7443a3c361efa2f233a, type: 3}
+  - {fileID: 8300000, guid: ceede7a829d41470a86526620500b878, type: 3}
+  - {fileID: 8300000, guid: 2f07c3b7706a64f489133201c2342886, type: 3}
+  - {fileID: 8300000, guid: 794be7c4bd9e64c9bbb9776937807a9e, type: 3}
+  - {fileID: 8300000, guid: 5d72ee7fecf3d4c479e4f2b39d511f96, type: 3}
+  - {fileID: 8300000, guid: 1d9cd8c6b727d4dbebafa83df3514a2c, type: 3}
+  - {fileID: 8300000, guid: a2ae90e42daaf4723a539c25867d37fd, type: 3}
+  - {fileID: 8300000, guid: 7b69beceabbd8f24e8bc62d77ac7ca1c, type: 3}
+  sfxVolume: 1
+  channels: 5
 --- !u!1001 &1097197693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1069,7 +1138,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1693780350 stripped
 GameObject:

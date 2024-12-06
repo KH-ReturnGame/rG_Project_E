@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -50
-  m_Sprite: {fileID: 21300000, guid: 0a6047c633a36c149837d9c8fe5d51e9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2d0007db97c1f1e449da90033f9caa4d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -114,3 +114,23 @@ MonoBehaviour:
     prefab: {fileID: 1348133729177994, guid: 526cda0fd54858c44b466001f90b3db2, type: 3}
   - color: {r: 0, g: 0, b: 1, a: 1}
     prefab: {fileID: 1132586047390324, guid: d19f5808b3e53ac40b15db7587807cbc, type: 3}
+  - color: {r: 1, g: 0, b: 0, a: 1}
+    prefab: {fileID: 1132586047390324, guid: ba8f671207ac5f14cb0e718500cda486, type: 3}
+  - color: {r: 0, g: 1, b: 1, a: 1}
+    prefab: {fileID: 1132586047390324, guid: a71c22b2c9ecba340a91023bd4c36254, type: 3}
+  - color: {r: 1, g: 0, b: 1, a: 1}
+    prefab: {fileID: 1132586047390324, guid: 58fa1b29acd58dd4a98b1e0458d9e19a, type: 3}
+  - color: {r: 0.502, g: 0.502, b: 0.502, a: 1}
+    prefab: {fileID: 1132586047390324, guid: ce616436800b04943a1b3e0bed2af5b0, type: 3}
+  - color: {r: 0, g: 1, b: 0, a: 1}
+    prefab: {fileID: 1132586047390324, guid: 779dccb25dc52dc45a0aa3af4cc0cc7b, type: 3}
+  - color: {r: 1, g: 0.4, b: 0, a: 1}
+    prefab: {fileID: 1132586047390324, guid: 67c6e9021379de04daf302de305c53c9, type: 3}
+  - color: {r: 1, g: 0.8, b: 0.8, a: 1}
+    prefab: {fileID: 1132586047390324, guid: 220a1fa1e1b242442a83c3fa1af016ad, type: 3}
+  - color: {r: 0.25, g: 0.25, b: 0.25, a: 1}
+    prefab: {fileID: 1132586047390324, guid: 24f67d98427978245bfb083755afc746, type: 3}
+  - color: {r: 1, g: 0.2, b: 0, a: 1}
+    prefab: {fileID: 1132586047390324, guid: 10d882a9637531f4d94c92c2e033ff91, type: 3}
+  - color: {r: 1, g: 1, b: 0, a: 1}
+    prefab: {fileID: 1132586047390324, guid: e51d903d0be5bca429a3d8c304c8560a, type: 3}

@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 212986427594164532}
   - component: {fileID: 61055580650241214}
   - component: {fileID: 1401461301093737544}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: ArrowLauncher
-  m_TagString: wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 168c33633e1ae8544a40cddf7c9dd117, type: 3}
-  m_Color: {r: 0, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 729a48bd5f800b643bf39e1900506731, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -127,3 +127,11 @@ MonoBehaviour:
   Arrow: {fileID: 1132586047390324, guid: 9663b190c229cd040bf6d1806270b206, type: 3}
   cooldown: 2.5
   type: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  _Launchers:
+  - {fileID: 21300000, guid: 93f4a744685519f418a2c1d009ad37b0, type: 3}
+  - {fileID: 21300000, guid: 34dcf80d9c0dcf44488e5200675e7bb5, type: 3}
+  - {fileID: 21300000, guid: 729a48bd5f800b643bf39e1900506731, type: 3}
+  - {fileID: 21300000, guid: 0ef16aa95dc7696478f95247b79bee77, type: 3}

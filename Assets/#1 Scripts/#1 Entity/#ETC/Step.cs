@@ -26,6 +26,6 @@ public class Step : MonoBehaviour
 
     void Buff()
     {
-
+        // 우진아 여기다가 버프 코드를 짜렴
     }
 }

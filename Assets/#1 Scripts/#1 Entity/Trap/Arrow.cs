@@ -5,12 +5,12 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     public float duration;
-    private int arrowType;
-    private float LaunchSpeed;
+    public int arrowType;
+    public float LaunchSpeed;
     // Start is called before the first frame update
     void Start()
     {
-        LaunchSpeed = 0.25f;
+        LaunchSpeed = 0.275f;
         StartCoroutine(DestroyArrow());
     }
 
