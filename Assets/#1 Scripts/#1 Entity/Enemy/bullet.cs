@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
-    Vector2 dirction = new Vector2();
     bool alive = true;
-    int dead = 0;
     float dashspeed = 100;
     GameObject player;
     float angle;
@@ -17,6 +15,8 @@ public class bullet : MonoBehaviour
     public float range;
     public bool fight;
     Enemy enemy;
+
+
     void Awake()
     {
         player = GameObject.Find("player 1(Clone)");
@@ -26,13 +26,14 @@ public class bullet : MonoBehaviour
         StartCoroutine(lifetime());
     }
 
+    //do while alive
     IEnumerator lifetime()
     {
-        yield return new WaitForSeconds(3);
-        alive = false;
-        Vector2 direction = (player.transform.position - transform.position).normalized;
-        rigid.AddForce(direction * dashspeed, ForceMode2D.Impulse);
-        Destroy(this,5);
+        yield return new WaitForSeconds(3);               //operate after 3s
+        alive = false;                                    //stop chasing
+        Vector2 direction = (player.transform.position - transform.position).normalized;  //make direction
+        rigid.AddForce(direction * dashspeed, ForceMode2D.Impulse);                       //add force
+        Destroy(this,5);                                                                  //destroy after 5s
     }
 
     void FixedUpdate()
@@ -43,6 +44,7 @@ public class bullet : MonoBehaviour
         }
     }
 
+    //move while alive
     void movement()
     {
         Vector2 dirVec = target.position - rigid.position;

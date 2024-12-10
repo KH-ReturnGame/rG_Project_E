@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class range_enemy : MonoBehaviour
 {
-    Rigidbody2D rigid;
-    void Awake()
+    Enemy enemy;
+    public Transform prefab;
+    void Start()
     {
-        rigid = GetComponent<Rigidbody2D>();
+        enemy = this.transform.parent.GetComponent<Enemy>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        
+        if (enemy.IsContainState(EnemyStates.IsAttacking))
+        {
+            Instantiate(prefab, new Vector2(this.position), Quaternion.identity);
+        }
+        else if (!enemy.IsContainState(EnemyStates.IsAttacking))
+        {
+
+        }
     }
 }
