@@ -180,3 +180,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ed9086878cde0048b397731fe093ab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 1511960400994527121, guid: fa92d4925645c5744a6e779522c34bdf, type: 3}

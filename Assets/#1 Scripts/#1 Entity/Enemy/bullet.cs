@@ -47,6 +47,11 @@ public class bullet : MonoBehaviour
     //move while alive
     void movement()
     {
+        angle = Mathf.Atan2(player.transform.position.y - transform.position.y,
+                            player.transform.position.x - transform.position.x)
+              * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, angle - 90);
+
         Vector2 dirVec = target.position - rigid.position;
         Vector2 nexcVec = dirVec.normalized * speed * Time.fixedDeltaTime;
         rigid.MovePosition(rigid.position + nexcVec);

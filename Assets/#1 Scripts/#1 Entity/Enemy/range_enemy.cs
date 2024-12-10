@@ -5,21 +5,24 @@ using UnityEngine;
 public class range_enemy : MonoBehaviour
 {
     Enemy enemy;
-    public Transform prefab;
-    void Start()
+    public GameObject bullet;
+    void Awake()
     {
-        enemy = this.transform.parent.GetComponent<Enemy>();
+        enemy = GetComponent<Enemy>();
+        
     }
-
+    
     void Update()
     {
         if (enemy.IsContainState(EnemyStates.IsAttacking))
         {
-            Instantiate(prefab, new Vector2(this.position), Quaternion.identity);
+            Debug.Log("bullet spawn");
+            Instantiate(bullet, this.transform.position, Quaternion.identity);
+            enemy.RemoveState(EnemyStates.IsAttacking);
         }
         else if (!enemy.IsContainState(EnemyStates.IsAttacking))
         {
-
+            Debug.Log("do not attack");
         }
     }
 }
