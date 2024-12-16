@@ -20,8 +20,9 @@ public class Enemy_Dead : MonoBehaviour
         if(testEnemy.GetHp() <= 0)
         {
             testEnemy.AddState(EnemyStates.IsDie);
+            Destroy(gameObject, 1f);
         }
-        if(testEnemy.IsContainState(EnemyStates.IsStun) || testEnemy.IsContainState(EnemyStates.IsDie))
+        if(testEnemy.IsContainState(EnemyStates.IsStun))
         {
             rigid.velocity = new Vector2 (0,0);
         }
@@ -38,6 +39,10 @@ public class Enemy_Dead : MonoBehaviour
                 testEnemy.TakeDamage(1);
                 StartCoroutine(Stun());
             }
+        }
+        else if(collision.gameObject.tag == "powerKick")
+        {
+            testEnemy.TakeDamage(testEnemy.GetHp());
         }
     }
 
