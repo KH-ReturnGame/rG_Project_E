@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 16933033869244203}
   m_Layer: 7
   m_Name: dash_enemy
-  m_TagString: enemy
+  m_TagString: enemyattack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

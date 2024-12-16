@@ -5,7 +5,7 @@ using UnityEngine;
 public class bullet : MonoBehaviour
 {
     bool alive = true;
-    float dashspeed = 100;
+    float dashspeed = 10;
     GameObject player;
     float angle;
     public float speed;
