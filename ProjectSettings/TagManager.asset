@@ -11,6 +11,8 @@ TagManager:
   - kick
   - trap
   - enemyattack
+  - powerKick
+  - Buff
   layers:
   - Default
   - TransparentFX
