@@ -230,6 +230,14 @@ PrefabInstance:
       propertyPath: m_Bounds.m_Center.y
       value: -0.0015199184
       objectReference: {fileID: 0}
+    - target: {fileID: 7099259133126730464, guid: e84a1f91ecf19e44f9434497c725558a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 7099259133126730464, guid: e84a1f91ecf19e44f9434497c725558a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.65
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 4843985084834002234, guid: e84a1f91ecf19e44f9434497c725558a, type: 3}
 --- !u!4 &980594969518791152 stripped
@@ -272,6 +280,10 @@ PrefabInstance:
     - target: {fileID: -8653719598885068355, guid: bf74e77b42c42a14b9bc2193b44cbf4a, type: 3}
       propertyPath: m_Name
       value: CursedLockerFront
+      objectReference: {fileID: 0}
+    - target: {fileID: -8653719598885068355, guid: bf74e77b42c42a14b9bc2193b44cbf4a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: bf74e77b42c42a14b9bc2193b44cbf4a, type: 3}
       propertyPath: m_RootOrder
