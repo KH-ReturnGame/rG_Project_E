@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6170473261291441934}
   - component: {fileID: 6948067149429286764}
   m_Layer: 7
-  m_Name: enemy_HellSkeleton
+  m_Name: HellSkeleton
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
