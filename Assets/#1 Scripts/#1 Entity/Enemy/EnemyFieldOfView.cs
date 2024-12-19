@@ -21,7 +21,7 @@ public class EnemyFieldOfView : MonoBehaviour {
     private Enemy _enemy;
     public void Start()
     {
-        _enemy = this.GetComponent<Enemy>();
+        _enemy = GetComponent<Enemy>();
     }
     private void Awake()
     {
