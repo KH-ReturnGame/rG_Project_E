@@ -15,16 +15,12 @@ public class EnemyFieldOfView : MonoBehaviour {
     [SerializeField] private LayerMask m_viewObstacleMask;     // 인식 방해물의 마스크 (플랫폼이되겠죠 아마)
 
     private List<Collider2D> hitedTargetContainer = new List<Collider2D>(); // 인식한 물체들을 보관할 컨테이너
-
     private float m_horizontalViewHalfAngle = 0f; // 시야각의 절반 값
 
     private Enemy _enemy;
-    public void Start()
+    void Awake()
     {
         _enemy = GetComponent<Enemy>();
-    }
-    private void Awake()
-    {
         m_horizontalViewHalfAngle = m_horizontalViewAngle * 0.5f;
     }
 
@@ -47,7 +43,7 @@ public class EnemyFieldOfView : MonoBehaviour {
         FindViewTargets();
     }
 
-    public Collider2D[] FindViewTargets()
+    Collider2D[] FindViewTargets()
     {
         hitedTargetContainer.Clear();
 
