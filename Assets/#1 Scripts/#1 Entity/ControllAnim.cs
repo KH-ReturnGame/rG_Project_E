@@ -30,64 +30,72 @@ public class ControllAnim : MonoBehaviour
         {
             if(deltaX > deltaY)
             {
-                FrontAnim.enabled = false;
-                BackAnim.enabled = false;
-                SideAnim.enabled = true;
+                FrontObj.SetActive(false);
+                BackObj.SetActive(false);
+                SideObj.SetActive(true);
                 transform.rotation = Quaternion.Euler(0, 180, 0);
+                EnabledAnim = SideAnim;
             }
             else
             {
-                FrontAnim.enabled = false;
-                BackAnim.enabled = true;
-                SideAnim.enabled = false;
+                FrontObj.SetActive(false);
+                BackObj.SetActive(true);
+                SideObj.SetActive(false);
+                EnabledAnim = BackAnim;
             }
         }
         else if(playerPos.position.x > transform.position.x && playerPos.position.y < transform.position.y)
         {
             if(deltaX > deltaY)
             {
-                FrontAnim.enabled = false;
-                BackAnim.enabled = false;
-                SideAnim.enabled = true;
+                FrontObj.SetActive(false);
+                BackObj.SetActive(false);
+                SideObj.SetActive(true);
                 transform.rotation = Quaternion.Euler(0, 180, 0);
+                EnabledAnim = SideAnim;
             }
             else
             {
-                FrontAnim.enabled = true;
-                BackAnim.enabled = false;
-                SideAnim.enabled = false;
+                FrontObj.SetActive(true);
+                BackObj.SetActive(false);
+                SideObj.SetActive(false);
+                EnabledAnim = FrontAnim;
             }
         }
         else if(playerPos.position.x < transform.position.x && playerPos.position.y > transform.position.y)
         {
             if(deltaX > deltaY)
             {
-                FrontAnim.enabled = false;
-                BackAnim.enabled = false;
-                SideAnim.enabled = true;
+                FrontObj.SetActive(false);
+                BackObj.SetActive(false);
+                SideObj.SetActive(true);
                 transform.rotation = Quaternion.Euler(0, 0, 0);
+                EnabledAnim = SideAnim;
             }
             else
             {
-                FrontAnim.enabled = false;
-                BackAnim.enabled = true;
-                SideAnim.enabled = false;
+                FrontObj.SetActive(false);
+                BackObj.SetActive(true);
+                SideObj.SetActive(false);
+                EnabledAnim = BackAnim;
             }
         }
         else if(playerPos.position.x < transform.position.x && playerPos.position.y < transform.position.y)
         {
             if(deltaX > deltaY)
             {
-                FrontAnim.enabled = false;
-                BackAnim.enabled = false;
-                SideAnim.enabled = true;
+                FrontObj.SetActive(false);
+                BackObj.SetActive(false);
+                SideObj.SetActive(true);
                 transform.rotation = Quaternion.Euler(0, 0, 0);
+                EnabledAnim = SideAnim;
             }
             else
             {
-                FrontAnim.enabled = true;
-                BackAnim.enabled = false;
-                SideAnim.enabled = false;
+                FrontObj.SetActive(true);
+                BackObj.SetActive(false);
+                SideObj.SetActive(false);
+                EnabledAnim = FrontAnim;
             }
         }
     }
