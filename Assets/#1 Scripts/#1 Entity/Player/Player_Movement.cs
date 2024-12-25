@@ -1,9 +1,6 @@
 using System.Collections;
 using UnityEngine;
 
-/// <summary>
-/// 플레이어 움직임 담당 클래스
-/// </summary>
 public class Player_Movement : MonoBehaviour
 {
     // 플레이어
@@ -86,8 +83,12 @@ public class Player_Movement : MonoBehaviour
     {
         // 캔 대시 상태 제거
         _player.RemoveState(PlayerStates.CanDash);
-
-        Vector2 dashDirection = Quaternion.Euler(0, 0, -90f) * transform.up; // 현재 바라보는 방향으로 대시
+        // 마우스 위치를 월드 좌표로 변환
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePosition.z = 0; // 2D 게임에서는 Z 좌표 무시
+    
+        // 대시 방향 계산
+        Vector2 dashDirection = (mousePosition - transform.position).normalized;
         float startTime = Time.time;
 
         _player.AddState(PlayerStates.IsDashing); // 대쉬 상태 돌입

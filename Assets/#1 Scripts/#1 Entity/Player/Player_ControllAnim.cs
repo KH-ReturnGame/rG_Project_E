@@ -7,95 +7,61 @@ public class Player_ControllAnim : MonoBehaviour
     public GameObject FrontObj;
     public GameObject BackObj;
     public GameObject SideObj;
-    Animator EnabledAnim;
-    Animator FrontAnim;
-    Animator BackAnim;
-    Animator SideAnim;
-    Transform playerPos;
+    private Animator EnabledAnim;
+    private Animator FrontAnim;
+    private Animator BackAnim;
+    private Animator SideAnim;
+
     // Start is called before the first frame update
     void Start()
     {
         FrontAnim = FrontObj.GetComponent<Animator>();
         BackAnim = BackObj.GetComponent<Animator>();
         SideAnim = SideObj.GetComponent<Animator>();
+        EnabledAnim = FrontAnim;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float deltaX = Mathf.Abs(playerPos.position.x - transform.position.x);
-        float deltaY = Mathf.Abs(playerPos.position.y - transform.position.y);
-        if(playerPos.position.x > transform.position.x && playerPos.position.y > transform.position.y)
+        if (Input.GetAxisRaw("Horizontal") > 0)
         {
-            if(deltaX > deltaY)
-            {
-                FrontObj.SetActive(false);
-                BackObj.SetActive(false);
-                SideObj.SetActive(true);
-                transform.rotation = Quaternion.Euler(0, 180, 0);
-                EnabledAnim = SideAnim;
-            }
-            else
-            {
-                FrontObj.SetActive(false);
-                BackObj.SetActive(true);
-                SideObj.SetActive(false);
-                EnabledAnim = BackAnim;
-            }
+            SetActiveState(false, false, true);
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+            EnabledAnim = SideAnim;
         }
-        else if(playerPos.position.x > transform.position.x && playerPos.position.y < transform.position.y)
+        else if (Input.GetAxisRaw("Horizontal") < 0)
         {
-            if(deltaX > deltaY)
-            {
-                FrontObj.SetActive(false);
-                BackObj.SetActive(false);
-                SideObj.SetActive(true);
-                transform.rotation = Quaternion.Euler(0, 180, 0);
-                EnabledAnim = SideAnim;
-            }
-            else
-            {
-                FrontObj.SetActive(true);
-                BackObj.SetActive(false);
-                SideObj.SetActive(false);
-                EnabledAnim = FrontAnim;
-            }
+            SetActiveState(false, false, true);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            EnabledAnim = SideAnim;
         }
-        else if(playerPos.position.x < transform.position.x && playerPos.position.y > transform.position.y)
+        
+        if (Input.GetAxisRaw("Vertical") > 0)
         {
-            if(deltaX > deltaY)
-            {
-                FrontObj.SetActive(false);
-                BackObj.SetActive(false);
-                SideObj.SetActive(true);
-                transform.rotation = Quaternion.Euler(0, 0, 0);
-                EnabledAnim = SideAnim;
-            }
-            else
-            {
-                FrontObj.SetActive(false);
-                BackObj.SetActive(true);
-                SideObj.SetActive(false);
-                EnabledAnim = BackAnim;
-            }
+            SetActiveState(false, true, false);
+            EnabledAnim = BackAnim;
         }
-        else if(playerPos.position.x < transform.position.x && playerPos.position.y < transform.position.y)
+        else if (Input.GetAxisRaw("Vertical") < 0)
         {
-            if(deltaX > deltaY)
-            {
-                FrontObj.SetActive(false);
-                BackObj.SetActive(false);
-                SideObj.SetActive(true);
-                transform.rotation = Quaternion.Euler(0, 0, 0);
-                EnabledAnim = SideAnim;
-            }
-            else
-            {
-                FrontObj.SetActive(true);
-                BackObj.SetActive(false);
-                SideObj.SetActive(false);
-                EnabledAnim = FrontAnim;
-            }
+            SetActiveState(true, false, false);
+            EnabledAnim = FrontAnim;
         }
+
+        if(Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+        {
+            EnabledAnim.SetBool("Walk", true);
+        }
+        else
+        {
+            EnabledAnim.SetBool("Walk", false);
+        }
+    }
+
+    void SetActiveState(bool front, bool back, bool side)
+    {
+        FrontObj.SetActive(front);
+        BackObj.SetActive(back);
+        SideObj.SetActive(side);
     }
 }

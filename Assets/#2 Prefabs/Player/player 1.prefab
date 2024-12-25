@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &592122119433617293
 Transform:
   m_ObjectHideFlags: 0
@@ -351,7 +351,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1998837954163405241}
-  - component: {fileID: 3404095774166504283}
+  - component: {fileID: 7507200577231768278}
   - component: {fileID: 1998837954163405254}
   - component: {fileID: 1998837954163405250}
   - component: {fileID: 1998837954163405251}
@@ -386,8 +386,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &3404095774166504283
-CircleCollider2D:
+--- !u!70 &7507200577231768278
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -400,8 +400,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 2, y: 3.5}
+  m_Direction: 0
 --- !u!50 &1998837954163405254
 Rigidbody2D:
   serializedVersion: 4
@@ -555,7 +555,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2149756517219236173
 Transform:
   m_ObjectHideFlags: 0
@@ -633,7 +633,7 @@ Animator:
   m_GameObject: {fileID: 2129433707451867489}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5c4427bcd8c0c7749953b285d7d54896, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2df8d0634532ac34099e33a3dbfe4dac, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
