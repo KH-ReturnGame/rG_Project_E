@@ -13,7 +13,7 @@ public class Player_Movement : MonoBehaviour
 
     // 움직임
     Vector2 inputVec;
-    public float speed = 3f;
+    public float speed = 5f;
 
     // 대시 관련 변수
     public float dashSpeed = 15f;      // 대시 속도
