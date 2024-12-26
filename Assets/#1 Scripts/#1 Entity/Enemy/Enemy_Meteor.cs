@@ -10,16 +10,19 @@ public class Enemy_Meteor : MonoBehaviour
     public int maxMeteors = 7;  // Max number of meteors
     private List<Vector3> meteorPositions = new List<Vector3>();
     EnemyMove enemyMove;
+    ControllAnim _contAnim;
 
     // Start is called before the first frame update
     void Start()
     {
         enemyMove = GetComponent<EnemyMove>();
+        _contAnim = GetComponent<ControllAnim>();
         SpawnMeteors();
     }
 
     void SpawnMeteors()
     {
+        _contAnim.EnabledAnim.SetTrigger("attack");
         int meteorsSpawned = 0;
         
         while (meteorsSpawned < maxMeteors)

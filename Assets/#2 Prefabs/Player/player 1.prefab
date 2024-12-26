@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 1998837954095157808}
   m_Layer: 10
   m_Name: kick
-  m_TagString: powerKick
+  m_TagString: kick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -450,7 +450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camTransform: {fileID: 7912210984460505606, guid: 7a62e5d3ba672cc4c96b070916f8ca16, type: 3}
   _camborderTransform: {fileID: 0}
-  speed: 3
+  speed: 5
   dashSpeed: 15
   dashDuration: 0.3
   dashCurve:

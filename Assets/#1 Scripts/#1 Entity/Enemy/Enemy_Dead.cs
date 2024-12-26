@@ -7,11 +7,13 @@ public class Enemy_Dead : MonoBehaviour
     Rigidbody2D rigid;
     Collider2D _collider;
     private Enemy testEnemy;
+    ControllAnim _contAnim;
     void Start()
     {
         testEnemy = GetComponent<Enemy>();
         rigid = GetComponent<Rigidbody2D>();
         _collider = GetComponent<Collider2D>();
+        _contAnim = GetComponent<ControllAnim>();
     }
 
     // Update is called once per frame
@@ -49,8 +51,7 @@ public class Enemy_Dead : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.tag == "wall" && testEnemy.IsContainState(EnemyStates.IsKicked))
-        {
-            Debug.Log("으악");            
+        {          
             testEnemy.AddState(EnemyStates.IsWall);
             testEnemy.AddState(EnemyStates.IsStun);
             testEnemy.RemoveState(EnemyStates.IsKicked);
@@ -59,9 +60,9 @@ public class Enemy_Dead : MonoBehaviour
         }
         else if(other.gameObject.tag == "trap")
         {
-            Debug.Log("함정www");
             testEnemy.TakeDamage(1000000);
             testEnemy.AddState(EnemyStates.IsDie);
+            _contAnim.EnabledAnim.SetTrigger("die");
             _collider.enabled = false;
         }
     }
@@ -69,6 +70,7 @@ public class Enemy_Dead : MonoBehaviour
     IEnumerator Stun()
     {
         // rigid.velocity = new Vector2 (0,0);
+        _contAnim.EnabledAnim.SetTrigger("damage");
         yield return new WaitForSeconds(1.5f);//1.5초 후 기절 풀림
         testEnemy.RemoveState(EnemyStates.IsStun);
         testEnemy.RemoveState(EnemyStates.IsWall);

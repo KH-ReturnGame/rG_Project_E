@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/#0 Scenes/MapTest.unity
     guid: 4e138c3afce631a4e813f9d958930f95
-  - enabled: 1
+  - enabled: 0
     path: Assets/#0 Scenes/kick2.unity
     guid: 50fe74e2686806b4094caeb7406ad529
   - enabled: 1
@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/#0 Scenes/Settings.unity
     guid: 350c68978eca46648ac449de40e5fedd
+  - enabled: 1
+    path: Assets/#0 Scenes/Main 1.unity
+    guid: e1ced88b1da70664b958442646949d5a
   m_configObjects: {}

@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 5886737859376664353}
   - component: {fileID: 6170473261291441934}
   - component: {fileID: -1354786973364781251}
+  - component: {fileID: 6967644489680326297}
   m_Layer: 7
   m_Name: FlameSoul
   m_TagString: enemy
@@ -232,10 +233,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fde8c79d00135945ab581e9e6618ce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 2
   distance: 0
-  range: 0
+  range: 7
   fight: 0
+  AttackObj: {fileID: 0}
 --- !u!114 &-1354786973364781251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,6 +253,20 @@ MonoBehaviour:
   FrontObj: {fileID: 2710358673353867425}
   BackObj: {fileID: 2710358673353867425}
   SideObj: {fileID: 7047092769859337076}
+  EnabledAnim: {fileID: 0}
+--- !u!114 &6967644489680326297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6948067149429286763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ed9086878cde0048b397731fe093ab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 1511960400994527121, guid: fa92d4925645c5744a6e779522c34bdf, type: 3}
 --- !u!1001 &2484560952317878556
 PrefabInstance:
   m_ObjectHideFlags: 0
