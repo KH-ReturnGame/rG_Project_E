@@ -19,6 +19,7 @@ public class ControllAnim : MonoBehaviour
         BackAnim = BackObj.GetComponent<Animator>();
         SideAnim = SideObj.GetComponent<Animator>();
         //playerPos = 뭐시기 뭐 우진이가 짠 무브에서 가져와야징;
+        playerPos = GameObject.Find("player 1(Clone)").transform;//임시
     }
 
     // Update is called once per frame
