@@ -5,12 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/#0 Scenes/MapTest.unity
-    guid: 4e138c3afce631a4e813f9d958930f95
-  - enabled: 0
-    path: Assets/#0 Scenes/kick2.unity
-    guid: 50fe74e2686806b4094caeb7406ad529
   - enabled: 1
     path: Assets/#0 Scenes/LoadingScene.unity
     guid: 9f07e343ef052814d8416c6b56ec32b3
@@ -21,6 +15,18 @@ EditorBuildSettings:
     path: Assets/#0 Scenes/Settings.unity
     guid: 350c68978eca46648ac449de40e5fedd
   - enabled: 1
-    path: Assets/#0 Scenes/Main 1.unity
+    path: Assets/#0 Scenes/Stages/Main 1.unity
     guid: e1ced88b1da70664b958442646949d5a
+  - enabled: 1
+    path: Assets/#0 Scenes/Stages/Main 2.unity
+    guid: 33e9e376073619044b680d581a19d811
+  - enabled: 1
+    path: Assets/#0 Scenes/Stages/Main 3.unity
+    guid: 2b0cedb1062f8b34cbd3462526597979
+  - enabled: 1
+    path: Assets/#0 Scenes/Stages/Main 4.unity
+    guid: f233ba63bcf26c9429571a95f581fd82
+  - enabled: 1
+    path: Assets/#0 Scenes/Stages/End.unity
+    guid: 8397543a75d13e04696c6468d4d0a472
   m_configObjects: {}
