@@ -45,7 +45,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -152,6 +152,18 @@ PrefabInstance:
     - target: {fileID: -7552582706839291426, guid: df3d7f872cd60684aba942e9208f3b4b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6863787286848744782, guid: df3d7f872cd60684aba942e9208f3b4b, type: 3}
+      propertyPath: m_Bounds.m_Center.x
+      value: 0.5426655
+      objectReference: {fileID: 0}
+    - target: {fileID: 6863787286848744782, guid: df3d7f872cd60684aba942e9208f3b4b, type: 3}
+      propertyPath: m_Bounds.m_Center.y
+      value: 0.00000047683716
+      objectReference: {fileID: 0}
+    - target: {fileID: 6863787286848744782, guid: df3d7f872cd60684aba942e9208f3b4b, type: 3}
+      propertyPath: m_Bounds.m_Extent.x
+      value: 4.9335346
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 4843985084834002234, guid: df3d7f872cd60684aba942e9208f3b4b, type: 3}

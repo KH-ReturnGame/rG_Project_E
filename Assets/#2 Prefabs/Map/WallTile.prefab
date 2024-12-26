@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wallTile: {fileID: 21300000, guid: 569d8c6464e76c94f84cd11af94cd1ca, type: 3}
+  wallTileDown: {fileID: 21300000, guid: cb9d76e5492a99845ac7907752125a63, type: 3}
   wallCorner_DL: {fileID: 21300000, guid: 9acc5e3d61f0fa94283157a1758a58b2, type: 3}
   wallCorner_DR: {fileID: 21300000, guid: b5023c020a88a944a95f9d2343f72e39, type: 3}
   wallCorner_UL: {fileID: 21300000, guid: f92f0f91067df8146af51e539d3b2f75, type: 3}

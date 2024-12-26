@@ -300,7 +300,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &714517895
 MonoBehaviour:
@@ -374,7 +374,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &869037606
 AudioSource:
@@ -613,7 +613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MasterVolume: 0.5
-  bgmClip: {fileID: 0}
+  bgmClip: {fileID: 8300000, guid: a5269e2be17256b4c9c64f348f55e18b, type: 3}
   bgmVolume: 0.25
   sfxClips:
   - {fileID: 8300000, guid: 534740200b124ad4fb985ac9d4385472, type: 3}
@@ -1050,7 +1050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1969274480980754634, guid: 036f79776140c214da67225eed617545, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1969274480980754634, guid: 036f79776140c214da67225eed617545, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1283,7 +1283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3712087440312571871, guid: 757135f6503978a4b9e4c6cd4a8b4f60, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3712087440312571871, guid: 757135f6503978a4b9e4c6cd4a8b4f60, type: 3}
       propertyPath: m_LocalPosition.x
