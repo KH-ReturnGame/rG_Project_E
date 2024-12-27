@@ -38,9 +38,9 @@ public class Player_Movement : MonoBehaviour
             _player.RemoveState(PlayerStates.CanDash);
         }
 
-        SheetAssigner SA = FindObjectOfType<SheetAssigner>();
-		Vector2 tempJump = SA.roomDimensions + SA.gutterSize;
-		moveJump = new Vector3(tempJump.x, tempJump.y, 0);
+        //SheetAssigner SA = FindObjectOfType<SheetAssigner>();
+		//Vector2 tempJump = SA.roomDimensions + SA.gutterSize;
+		//moveJump = new Vector3(tempJump.x, tempJump.y, 0);
     }
     void Awake()
     {
@@ -112,50 +112,50 @@ public class Player_Movement : MonoBehaviour
         _player.AddState(PlayerStates.CanDash);
     }
     void OnTriggerEnter2D(Collider2D other) {
-		if (other.CompareTag("door")) { // assuming the door has the tag "Door"
-			Vector3 doorDirection = Vector3.zero;
+		// if (other.CompareTag("door")) { // assuming the door has the tag "Door"
+		// 	Vector3 doorDirection = Vector3.zero;
 
-			// 문 위치에 따라 이동 방향을 결정합니다.
-			if (other.gameObject.name == "DoorU(Clone)") {
-				doorDirection = Vector3.up;
-			} else if (other.gameObject.name == "DoorD(Clone)") {
-				doorDirection = Vector3.down;
-			} else if (other.gameObject.name == "DoorL(Clone)") {
-				doorDirection = Vector3.left;
-			} else if (other.gameObject.name == "DoorR(Clone)") {
-				doorDirection = Vector3.right;
-			}
+		// 	// 문 위치에 따라 이동 방향을 결정합니다.
+		// 	if (other.gameObject.name == "DoorU(Clone)") {
+		// 		doorDirection = Vector3.up;
+		// 	} else if (other.gameObject.name == "DoorD(Clone)") {
+		// 		doorDirection = Vector3.down;
+		// 	} else if (other.gameObject.name == "DoorL(Clone)") {
+		// 		doorDirection = Vector3.left;
+		// 	} else if (other.gameObject.name == "DoorR(Clone)") {
+		// 		doorDirection = Vector3.right;
+		// 	}
 
-			// 플레이어 위치를 이동시킵니다.
-            transform.position += new Vector3(doorDirection.x * moveJump.x * 0.89f, doorDirection.y * moveJump.y * 0.905f, 0);
-            _camborderTransform.position += new Vector3(doorDirection.x * moveJump.x, doorDirection.y * moveJump.y, 0);
-            _camTransform.position = new Vector3(transform.position.x, transform.position.y, 0);
-			// 필요한 경우 여기서 추가적인 맵 로딩 로직을 수행할 수 있습니다.
+		// 	// 플레이어 위치를 이동시킵니다.
+        //     transform.position += new Vector3(doorDirection.x * moveJump.x * 0.89f, doorDirection.y * moveJump.y * 0.905f, 0);
+        //     _camborderTransform.position += new Vector3(doorDirection.x * moveJump.x, doorDirection.y * moveJump.y, 0);
+        //     _camTransform.position = new Vector3(transform.position.x, transform.position.y, 0);
+		// 	// 필요한 경우 여기서 추가적인 맵 로딩 로직을 수행할 수 있습니다.
 
-            LevelGeneration levelGenerator = GameObject.Find("MapManager").GetComponent<LevelGeneration>();
+        //     LevelGeneration levelGenerator = GameObject.Find("MapManager").GetComponent<LevelGeneration>();
             
-            MapSpriteSelector currentRoomMinimap = levelGenerator.minimaps.Find(m => m.type == 1);
-            if (currentRoomMinimap != null) {
-                currentRoomMinimap.type = 0;
-                currentRoomMinimap.PickColor(); // 색상 업데이트
-            }
+        //     MapSpriteSelector currentRoomMinimap = levelGenerator.minimaps.Find(m => m.type == 1);
+        //     if (currentRoomMinimap != null) {
+        //         currentRoomMinimap.type = 0;
+        //         currentRoomMinimap.PickColor(); // 색상 업데이트
+        //     }
             
-            Vector3 miniMapOffset = CalculateMiniMapOffset();//미니맵 오프셋 조정
-            Vector3 newRoomPos = miniMapOffset;
+        //     Vector3 miniMapOffset = CalculateMiniMapOffset();//미니맵 오프셋 조정
+        //     Vector3 newRoomPos = miniMapOffset;
 
-            // Debug.Log($"New Room Position: {newRoomPos}");
+        //     // Debug.Log($"New Room Position: {newRoomPos}");
 
-            // // 미니맵 상의 방 좌표 출력
-            // foreach (var minimap in levelGenerator.minimaps) {
-            //     Debug.Log($"Minimap Position: {minimap.transform.position}");
-            // }
+        //     // // 미니맵 상의 방 좌표 출력
+        //     // foreach (var minimap in levelGenerator.minimaps) {
+        //     //     Debug.Log($"Minimap Position: {minimap.transform.position}");
+        //     // }
 
-            MapSpriteSelector newRoomMinimap = levelGenerator.minimaps.Find(m => Vector3.Distance(m.transform.position, newRoomPos) < 20f);
-            if (newRoomMinimap != null) {
-                newRoomMinimap.type = 1;
-                newRoomMinimap.PickColor(); // 색상 업데이트
-            }
-		}
+        //     MapSpriteSelector newRoomMinimap = levelGenerator.minimaps.Find(m => Vector3.Distance(m.transform.position, newRoomPos) < 20f);
+        //     if (newRoomMinimap != null) {
+        //         newRoomMinimap.type = 1;
+        //         newRoomMinimap.PickColor(); // 색상 업데이트
+        //     }
+		// }
     }
     Vector3 CalculateMiniMapOffset() {
         // Y 좌표 증가율 비율 200 -> 32, X 좌표 증가율 비율 400 -> 64
