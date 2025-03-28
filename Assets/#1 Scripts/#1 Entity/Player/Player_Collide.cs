@@ -15,8 +15,8 @@ public class Player_Collide : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "trap" 
-        && !_player.IsContainState(PlayerStates.IsDashing) 
+        if (collision.gameObject.tag == "trap"
+        && !_player.IsContainState(PlayerStates.IsDashing)
         && !_player.IsContainState(PlayerStates.IsDefencing))
         {
             _player.AddState(PlayerStates.IsDie);
@@ -36,8 +36,14 @@ public class Player_Collide : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "trap" 
-        && !_player.IsContainState(PlayerStates.IsDashing) 
+        if (other.gameObject.tag == "trap"
+        && !_player.IsContainState(PlayerStates.IsDashing)
+        && !_player.IsContainState(PlayerStates.IsDefencing))
+        {
+            _player.AddState(PlayerStates.IsDie);
+        }
+        if (other.gameObject.tag == "enemyattack"
+        && !_player.IsContainState(PlayerStates.IsDashing)
         && !_player.IsContainState(PlayerStates.IsDefencing))
         {
             _player.AddState(PlayerStates.IsDie);

@@ -24,7 +24,6 @@ public class LavaSpark : MonoBehaviour
         {
             Player_Movement _player = collision.gameObject.GetComponent<Player_Movement>();
             _player.Sparked();
-            Debug.Log("here?");
         }
     }
 
